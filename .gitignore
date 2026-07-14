@@ -25,6 +25,9 @@ __pycache__/
 
 # Folders:
 
+Data_2014
+Data_2022
 #WebVisualizations/.DS-Store
 
 .env
+.venv
