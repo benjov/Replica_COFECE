@@ -1,4 +1,4 @@
-categorias = {
+CATEGORIAS = {
     "Tortillas": ["Tortilla de maíz"],
     "Pan": ["Pan blanco", "Pan dulce"],
     "Pollo y huevo": ["Pollo", "Huevo"],
