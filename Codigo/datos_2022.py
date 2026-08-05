@@ -54,7 +54,17 @@ ANIO_ENIGH = 2022
 # parámetro mueve el resultado principal (en 2014, cambiar el denominador movió
 # la VE/ingreso de 10.0% a 15.8%).
 # ---------------------------------------------------------------------------
-CORTE_MONETARIO = 67
+# RESUELTO (2026-08-04): NO hay que cortar. `ingresos.csv` ya contiene solo
+# ingreso monetario — la suma de todas sus claves ($53,929) coincide con
+# `ing_cor - estim_alqu - remu_espec` ($53,694), y `estim_alqu`, el componente
+# no monetario principal, es imputado y no aparece en el archivo.
+#
+# Con el corte en P067 el bienestar salía imposible: el decil 1 daba una
+# VE/ingreso de 270.8% (la VE triplicaba el ingreso) porque el corte amputaba
+# ingreso monetario legítimo. Sin corte: 39.5% en el decil 1, 17.0% total,
+# regresividad 6.82, reducción de Gini 8.4% — estructuralmente comparable al
+# paper (30.9%, 15.7%, 4.42, 7.3%).
+CORTE_MONETARIO = 999
 
 
 def clave_2022(clave_numerica):
