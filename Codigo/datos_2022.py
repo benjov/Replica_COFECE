@@ -371,6 +371,7 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
 
     # ing_mon reconstruido, sobre la muestra COMPLETA (lo pide el Gini, N10)
     ing_mon_todos = ingreso_monetario(data_dir, conc['hog'], corte_monetario)
+    ing_cor_todos = conc['ing_cor'].to_numpy(float)
     if verbose:
         r = ing_mon_todos.sum() / conc['ing_cor'].sum()
         print(f'ing_mon reconstruido (corte P{corte_monetario:03d}): '
@@ -576,6 +577,8 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
         gastos_cat=gastos_cat, Z=Z,
         factor_expansion=conc['factor'].to_numpy(float), ciudad=ciudad,
         ingreso_mon=ing_mon,
+        ingreso_cor=conc['ing_cor'].to_numpy(float),
+        ingreso_cor_completo=ing_cor_todos,
         n_ciudades=len(ciudades), vars_costos=vars_costos,
         precios_producto_ciudad=P_ciudad,
         gastos_producto=gastos_producto, composicion=composicion,

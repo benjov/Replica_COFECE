@@ -1,3 +1,16 @@
+> ## ⚠️ BITÁCORA HISTÓRICA — estado de junio 2026
+>
+> Documento del **primer intento de réplica**, anterior al refactor a módulos. Se conserva
+> porque registra bien los hallazgos sobre el código Gauss y varios bugs que se corrigieron
+> entonces, pero **sus resultados y su descripción de la estructura del proyecto están
+> obsoletos**.
+>
+> Para el estado vigente ver `README.md` y las portadas de `aradillas_2014.ipynb` y
+> `aradillas_2022.ipynb`. El registro completo de correcciones y decisiones está en
+> `CLAUDE.md` (fuera del repositorio).
+
+---
+
 # Resumen del proyecto: Réplica y actualización de Aradillas (2018)
 
 ## Objetivo general

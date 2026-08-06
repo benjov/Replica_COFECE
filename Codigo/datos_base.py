@@ -56,6 +56,14 @@ class DatosAnio:
     # del filtro de muestra (l.938 va antes de la l.1101). Ver N10.
     ingreso_mon_completo: np.ndarray
 
+    # Ingreso corriente. Es la ÚNICA variable de ingreso con definición idéntica
+    # en los concentrados de 2014 y 2022, así que es la base obligada para
+    # comparar años: `ingreso_mon` no lo es (la ENIGH 2022 "Nueva serie" dejó de
+    # publicar ing_mon y hubo que reconstruirlo, razón ing_mon/ing_cor de 0.794
+    # en 2014 contra 0.877 en 2022).
+    ingreso_cor: np.ndarray = None
+    ingreso_cor_completo: np.ndarray = None
+
     # --- sub-categorías con tratamiento especial ---
     # Transporte foráneo agrega autobús + aéreo en una sola categoría con
     # índice Divisia; sus elasticidades se reportan por separado perturbando
@@ -104,6 +112,8 @@ class DatosAnio:
             factor_expansion=self.factor_expansion[mask],
             ciudad=self.ciudad[mask],
             ingreso_mon=self.ingreso_mon[mask],
+            ingreso_cor=(None if self.ingreso_cor is None
+                         else np.asarray(self.ingreso_cor)[mask]),
             subcat={k: np.asarray(v)[mask] for k, v in self.subcat.items()},
             gastos_producto={k: np.asarray(v)[mask]
                              for k, v in self.gastos_producto.items()},

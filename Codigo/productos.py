@@ -15,9 +15,14 @@ CATEGORIAS = {
         "Queso Oaxaca o asadero",
         "Mantequilla",
     ],
+    # CORRECCIÓN N7 (2026-08-05): el Gauss (programa_ENIGH_2014.g l.1979-1990)
+    # pone el AGUACATE en Verduras, no en Frutas, e incluye la PERA en Frutas.
+    # Esta lista tenía ambos errores. La versión verificada clave por clave
+    # está en datos_2014.CATEGORIAS; este diccionario se conserva solo para el
+    # notebook histórico aradillas_2022_DOCUMENTADO.ipynb.
     "Frutas": [
-        "Aguacate",
         "Guayaba",
+        "Pera",
         "Limón",
         "Manzana",
         "Melón",
@@ -29,6 +34,7 @@ CATEGORIAS = {
         "Uva",
     ],
     "Verduras": [
+        "Aguacate",
         "Calabacita",
         "Cebolla",
         "Chayote",

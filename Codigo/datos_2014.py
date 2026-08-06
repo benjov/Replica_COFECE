@@ -152,6 +152,7 @@ COL_EDUCA_JEFE = 10   # educa_jefe  (col 11)
 COL_TOT_INTEG = 11    # tot_integ   (col 12)
 COL_MENORES = 15      # menores     (col 16)
 COL_ING_TOTAL = 21    # ing_total   (col 22)
+COL_ING_COR = 22      # ing_cor     (col 23)  <- base comparable entre años
 COL_ING_MON = 23      # ing_mon     (col 24)  <- base del Gini y de la VE (N10/N11)
 COL_GASTO_MON = 65    # gasto_mon   (col 66)
 COL_MATERIALES = 120  # mater_serv  (col 121)
@@ -237,6 +238,7 @@ def cargar(data_dir, verbose=True):
     gastos_p = np.loadtxt(data_dir + 'gasto_persona_enigh_2014.asc')
 
     ingreso_mon_completo = conc[:, COL_ING_MON].copy()   # antes de filtrar (N10)
+    ingreso_cor_completo = conc[:, COL_ING_COR].copy()
 
     # Filtros de muestra (Gauss l.1101). Vivienda propia = tenencia 3 ó 4;
     # está en el Gauss aunque el paper no lo menciona (divergencia D-B).
@@ -347,6 +349,8 @@ def cargar(data_dir, verbose=True):
         gastos_cat=gastos_cat, Z=Z,
         factor_expansion=conc[:, COL_FACTOR], ciudad=ciudad,
         ingreso_mon=conc[:, COL_ING_MON],
+        ingreso_cor=conc[:, COL_ING_COR],
+        ingreso_cor_completo=ingreso_cor_completo,
         n_ciudades=N_CIUDADES, vars_costos=_vars_costos(data_dir),
         precios_producto_ciudad={p: P46[p] for p in gastos_producto},
         gastos_producto=gastos_producto, composicion=composicion,
