@@ -569,12 +569,35 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
             cm = p_m[m] - b_cap * eta_c
             markup[m, j] = max(1., min(markup_max, p_m[m] / cm)) if cm > 0 else 1.
 
-    return {"beta_eta": beta_eta, "t_eta": t_eta, "se_eta": se_eta, "markup": markup}
+    # V2 — markup para el CONTRAFACTUAL DE BIENESTAR: el Gauss (l.6345, 6380) no
+    # usa el markup de esta regresión, sino el índice de Lerner derivado
+    # directamente de la elasticidad: tasa = -1/ε, markup = 1 + tasa.
+    # Son dos objetos distintos: `markup` sirve para el Cuadro 9 (sobreprecios);
+    # `markup_lerner` es el que entra en la variación equivalente.
+    markup_lerner = np.ones_like(markup)
+    with np.errstate(divide="ignore", invalid="ignore"):
+        tasa = -1.0 / elastic_ciudad
+    tasa = np.where(np.isfinite(tasa) & (elastic_ciudad < 0), tasa, 0.0)
+    markup_lerner = 1.0 + np.clip(tasa, 0.0, markup_max - 1.0)
+
+    return {"beta_eta": beta_eta, "t_eta": t_eta, "se_eta": se_eta,
+            "markup": markup, "markup_lerner": markup_lerner}
 
 
 # ===========================================================================
 # SECCIÓN 8 — Variación equivalente y bienestar
 # ===========================================================================
+# V1 — umbral de significancia del Gauss: cdfni(0.99) = 2.326 (una cola, 99 %),
+# no 1.645 (95 %). Determina qué sectores entran al contrafactual (l.6376).
+T_SIGNIF = 2.326
+
+
+def sectores_significativos(t_eta, beta_eta, umbral=T_SIGNIF):
+    """Indicadora de sectores que entran al contrafactual de bienestar."""
+    return np.array([float(t >= umbral and b > 0)
+                     for t, b in zip(t_eta, beta_eta)])
+
+
 def variacion_equivalente(modelo, pm, Z, epsilon, wm, sg, markup_hogar, sig,
                           verbose=True):
     """Variación equivalente de eliminar el poder de mercado.
@@ -607,7 +630,12 @@ def variacion_equivalente(modelo, pm, Z, epsilon, wm, sg, markup_hogar, sig,
     return np.maximum(VE, 0.)
 
 
-def cuadro_10(VE, ingreso):
+def cuadro_10(VE, ingreso, estadistico="mediana"):
+    """V4 — el Gauss reporta MEDIANAS, no medias (l.6520 y ss.:
+    `VE_2014_todo_pais = quantile(VE_2014, 0.5)`). Con una distribución de VE
+    sesgada la diferencia es grande, y comparar nuestra media contra la mediana
+    publicada exageraba la brecha.
+    `estadistico="media"` recupera el comportamiento anterior."""
     """Pérdida de bienestar por decil de ingreso.
 
     CORRECCIÓN N11: el denominador es ing_mon (columna 24 del concentrado), no
@@ -625,16 +653,23 @@ def cuadro_10(VE, ingreso):
     decil = np.clip(decil, 1, 10)
 
     ratio = VE / np.where(ing > 0, ing, np.nan)
+    if estadistico == "mediana":
+        agg, agg_nan = np.median, np.nanmedian
+    elif estadistico == "media":
+        agg, agg_nan = np.mean, np.nanmean
+    else:
+        raise ValueError("estadistico debe ser 'mediana' o 'media'")
+
     filas = []
     for d in range(1, 11):
         s = decil == d
         if not s.any():
             continue
-        filas.append({"decil": d, "VE": VE[s].mean(),
-                      "pct": np.nanmean(ratio[s]) * 100})
-    total = {"decil": "Tot", "VE": VE.mean(), "pct": np.nanmean(ratio) * 100}
-    r1 = np.nanmean(ratio[decil == 1])
-    r10 = np.nanmean(ratio[decil == 10])
+        filas.append({"decil": d, "VE": agg(VE[s]),
+                      "pct": agg_nan(ratio[s]) * 100})
+    total = {"decil": "Tot", "VE": agg(VE), "pct": agg_nan(ratio) * 100}
+    r1 = agg_nan(ratio[decil == 1])
+    r10 = agg_nan(ratio[decil == 10])
     return {"deciles": filas, "total": total, "regresividad": r1 / r10,
             "tasas": [f["pct"] for f in filas]}
 

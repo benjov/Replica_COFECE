@@ -64,6 +64,11 @@ class DatosAnio:
     ingreso_cor: np.ndarray = None
     ingreso_cor_completo: np.ndarray = None
 
+    # Ingreso TOTAL (col 22). Es el denominador que usa el Gauss para la VE
+    # (l.6519, corrección V3). Solo existe en 2014: la ENIGH 2022 "Nueva serie"
+    # dejó de publicarlo, y por eso la comparación entre años usa `ingreso_cor`.
+    ingreso_total: np.ndarray = None
+
     # --- sub-categorías con tratamiento especial ---
     # Transporte foráneo agrega autobús + aéreo en una sola categoría con
     # índice Divisia; sus elasticidades se reportan por separado perturbando
@@ -114,6 +119,8 @@ class DatosAnio:
             ingreso_mon=self.ingreso_mon[mask],
             ingreso_cor=(None if self.ingreso_cor is None
                          else np.asarray(self.ingreso_cor)[mask]),
+            ingreso_total=(None if self.ingreso_total is None
+                           else np.asarray(self.ingreso_total)[mask]),
             subcat={k: np.asarray(v)[mask] for k, v in self.subcat.items()},
             gastos_producto={k: np.asarray(v)[mask]
                              for k, v in self.gastos_producto.items()},

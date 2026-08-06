@@ -350,6 +350,7 @@ def cargar(data_dir, verbose=True):
         factor_expansion=conc[:, COL_FACTOR], ciudad=ciudad,
         ingreso_mon=conc[:, COL_ING_MON],
         ingreso_cor=conc[:, COL_ING_COR],
+        ingreso_total=conc[:, COL_ING_TOTAL],
         ingreso_cor_completo=ingreso_cor_completo,
         n_ciudades=N_CIUDADES, vars_costos=_vars_costos(data_dir),
         precios_producto_ciudad={p: P46[p] for p in gastos_producto},
