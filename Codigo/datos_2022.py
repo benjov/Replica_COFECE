@@ -626,19 +626,33 @@ def _vars_costos(data_dir, claves_ciudad, nombres=None, verbose=True):
     eran otras) y asignaba filas por orden: ninguna de las 46 ciudades recibía
     sus propios datos. Fresnillo viene en archivo aparte y con otro orden de
     columnas, por eso se lee por nombre.
+
+    Una ciudad sin fila municipal usa el total de su entidad, si existe. Es el
+    caso del Área Metropolitana de la Cd. de México: el Gauss de 2014 usa el total
+    de la entidad (≈415 mil UE), y `censo_economico_2023.csv` trae CDMX solo como
+    "Total estatal" (425,005 UE), que la versión anterior descartaba al filtrar
+    únicamente "Total municipal". Verificado idéntico a una consulta directa a
+    SAIC (7 de 7 variables).
     """
     tablas = []
     for arch in ('censo_economico_2023.csv', 'censo_economico_fresnillo_2023.csv'):
         df = pd.read_csv(data_dir + arch, skiprows=4, encoding='utf-8-sig')
-        df = df[df['Actividad económica'].astype(str).str.contains('Total municipal', na=False)]
-        clave = df['Entidad'].astype(str).str[:2] + df['Municipio'].astype(str).str[:3]
+        act = df['Actividad económica'].astype(str)
+        df = df[act.str.contains('Total municipal|Total estatal', na=False)]
+        # municipio: ent+mun (5 dígitos); total estatal: solo ent (2 dígitos)
+        estatal = df['Actividad económica'].astype(str).str.contains('Total estatal')
+        clave = df['Entidad'].astype(str).str[:2] + np.where(
+            estatal, '', df['Municipio'].astype(str).str[:3])
         # "A111A Producción bruta total (millones de pesos)" -> "A111A"
         df = df.rename(columns={c: str(c).split(' ')[0] for c in df.columns})
         tablas.append(df.assign(clave=clave).set_index('clave'))
     cols = ['A111A', 'UE', 'H001A', 'J000A', 'A121A', 'Q000A', 'Q000B']
     censo = pd.concat(tablas)[cols].apply(pd.to_numeric, errors='coerce')
 
-    M = censo.reindex(claves_ciudad)
+    claves = [c if c in censo.index or c is None or c[:2] not in censo.index else c[:2]
+              for c in claves_ciudad]
+    estatales = [i for i, (a, b) in enumerate(zip(claves_ciudad, claves)) if a != b]
+    M = censo.reindex(claves)
     UE = M['UE']
     with np.errstate(divide='ignore', invalid='ignore'):
         X = np.column_stack([M['A111A'] / UE, UE, M['H001A'] / UE, M['J000A'] / UE,
@@ -650,6 +664,8 @@ def _vars_costos(data_dir, claves_ciudad, nombres=None, verbose=True):
     if verbose:
         nom = nombres or [str(c) for c in claves_ciudad]
         msj = f'  variables de costo: censo propio en {int((~faltan).sum())} de {len(X)} ciudades'
+        if estatales:
+            msj += f'; total estatal en {[nom[i] for i in estatales]}'
         if faltan.any():
             msj += f'; mediana imputada en {[nom[i] for i in np.flatnonzero(faltan)]}'
         print(msj)
