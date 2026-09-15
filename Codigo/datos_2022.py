@@ -267,10 +267,12 @@ def deflactar_precios(data_dir, pref, ciudades, ciudades_orig, verbose=True):
         base = np.isclose(fechas, ANIO_BASE + MES_BASE / 100)      # N16
         vent = (fechas >= ANIO_ENIGH + MES_INI / 100) & (fechas <= ANIO_ENIGH + MES_FIN / 100)
         for gen, serie in series.items():
-            b = np.nanmedian(serie[base])
-            v = serie[vent]
-            if np.isfinite(b) and b > 0 and np.isfinite(v).any():
-                factores[(c, gen)] = float(np.nanmedian(v) / b)
+            # Series sin dato en el mes base o en la ventana: se omiten (sin
+            # np.nanmedian sobre vacíos, que llena la salida de advertencias)
+            b, v = serie[base], serie[vent]
+            b, v = b[np.isfinite(b)], v[np.isfinite(v)]
+            if b.size and v.size and np.median(b) > 0:
+                factores[(c, gen)] = float(np.median(v) / np.median(b))
     if verbose:
         if sin_serie:
             print(f'  sin serie INPC ({len(sin_serie)}): {sin_serie[:3]}...')
@@ -327,9 +329,10 @@ def precios_materiales(data_dir, ciudades, ciudades_orig, base=100.0, verbose=Tr
         if cand is None:
             continue
         serie = idx[cand]
-        b, v = np.nanmedian(serie[base_m]), np.nanmedian(serie[vent])
-        if np.isfinite(b) and b > 0 and np.isfinite(v):
-            P[i] = base * (v / b)
+        b, v = serie[base_m], serie[vent]
+        b, v = b[np.isfinite(b)], v[np.isfinite(v)]
+        if b.size and v.size and np.median(b) > 0:
+            P[i] = base * (np.median(v) / np.median(b))
     faltan = int(np.isnan(P).sum())
     if faltan:
         P = np.where(np.isnan(P), np.nanmedian(P), P)
@@ -385,7 +388,8 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
               f'razón ing_mon/ing_cor = {r:.3f}   [2014: 0.794]')
 
     # --- filtros de muestra (Gauss l.1101) ---------------------------------
-    viv = pd.read_csv(data_dir + 'viviendas.csv', dtype={'folioviv': str})
+    viv = pd.read_csv(data_dir + 'viviendas.csv', dtype={'folioviv': str},
+                      low_memory=False)
     viv.columns = [c.strip().lstrip('﻿') for c in viv.columns]
     viv['tenencia'] = pd.to_numeric(viv['tenencia'], errors='coerce')
     propias = set(viv.loc[viv['tenencia'].isin([3, 4]), 'folioviv'])
