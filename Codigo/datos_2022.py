@@ -34,25 +34,20 @@ EPS = 0.01
 N_Z = 9
 
 # Ventana de levantamiento de la ENIGH 2022 (ago-nov), análoga a la de 2014.
-ANIO_BASE = 2018            # los precios de referencia de data_inp_pp son 2018
+ANIO_BASE = 2018            # los precios de referencia de data_inp_pp son de julio 2018
+MES_BASE = 7                # CORRECCIÓN N16: la base del deflactor es el MISMO mes de
+                            # las cotizaciones (el Gauss: jun-2011 contra INPC jun-2011).
+                            # La mediana de todo 2018 desviaba >5 % el 22 % de los factores,
+                            # hasta ±50 % en frutas estacionales (naranja, melón, uva).
 MES_INI, MES_FIN = 8, 11
 ANIO_ENIGH = 2022
 
 # ---------------------------------------------------------------------------
-# CORTE_MONETARIO — parámetro pendiente de confirmar contra el catálogo ENIGH.
+# CORTE_MONETARIO — hasta qué clave P### de `ingresos.csv` se suma como ingreso.
 #
-# `ing_mon` no viene en el concentrado 2022. Se reconstruye sumando `ing_tri`
-# de `ingresos.csv` sobre las claves P001..P{CORTE_MONETARIO}, bajo el supuesto
-# de que las no monetarias (pago en especie, regalos) van al final del catálogo.
-#
-# Evidencia que sustenta el 67 (razón ing_mon/ing_cor; referencia 2014 = 0.794):
-#     P001-P060 -> 0.753    P001-P068 -> 0.774    P001-P080 -> 0.849
-#     P001-P067 -> 0.759    P001-P070 -> 0.825    todas     -> 0.877
-#
-# ES UNA INFERENCIA, NO UN DATO VERIFICADO. Confirmar contra la descripción de
-# la base de datos de INEGI antes de publicar resultados de bienestar: este
-# parámetro mueve el resultado principal (en 2014, cambiar el denominador movió
-# la VE/ingreso de 10.0% a 15.8%).
+# `ing_mon` no viene en el concentrado 2022. Se probó cortar en P067 bajo el
+# supuesto de que las claves no monetarias van al final del catálogo
+# (razón ing_mon/ing_cor: P067 -> 0.759, todas -> 0.877; 2014 = 0.794).
 # ---------------------------------------------------------------------------
 # RESUELTO (2026-08-04): NO hay que cortar. `ingresos.csv` ya contiene solo
 # ingreso monetario — la suma de todas sus claves ($53,929) coincide con
@@ -84,6 +79,17 @@ CATEGORIAS = [
     for nombre, comps in CATEGORIAS_2014
 ]
 
+# P1 — pan industrial como categoría propia (desviación deliberada del Gauss).
+# Catálogo ENIGH 2022: A012 pan blanco, A013 pan dulce en piezas, A014 pan
+# dulce empaquetado, A015 pan para sándwich, hamburguesa, hot dog y tostado.
+# El Gauss solo usa A012+A013, así que el pan de caja quedaba FUERA del estudio.
+# Se agrega A015 con el genérico INPC "Pan de caja"; "Pan" conserva A012+A013
+# para seguir siendo comparable con 2014. A014 se deja fuera: no tiene serie
+# INPC por ciudad. Va antes de Materiales, que debe seguir siendo el numerario.
+CATEGORIAS.insert(
+    next(i for i, (n, _) in enumerate(CATEGORIAS) if n == 'Pan') + 1,
+    ('Pan de caja', [(['A015'], 'pan_de_caja')]))
+
 # Nombre del genérico en los archivos de precios de INEGI, por producto.
 # Los genéricos de 2022 no son uno a uno con los productos de 2014: la res ya
 # no se desagrega en bistec/molida/vísceras, así que varios productos comparten
@@ -91,7 +97,8 @@ CATEGORIAS = [
 # INPC a bistec y molida.
 GENERICO = {
     'tortillas': 'Tortilla de maíz', 'pan_blanco': 'Pan blanco',
-    'pan_dulce': 'Pan dulce', 'pollo_entero': 'Pollo', 'pollo_piezas': 'Pollo',
+    'pan_dulce': 'Pan dulce', 'pan_de_caja': 'Pan de caja',
+    'pollo_entero': 'Pollo', 'pollo_piezas': 'Pollo',
     'huevo': 'Huevo', 'bistec_res': 'Carne de res', 'molida_res': 'Carne de res',
     'visceras_res': 'Vísceras de res', 'chorizo': 'Chorizo', 'jamon': 'Jamón',
     'salchichas': 'Salchichas', 'tocino': 'Tocino',
@@ -234,11 +241,11 @@ def _serie_inpc(path):
 
 
 def deflactar_precios(data_dir, pref, ciudades, ciudades_orig, verbose=True):
-    """Lleva los precios de referencia 2018 a la ventana ago-nov 2022.
+    """Lleva los precios de referencia de julio 2018 a la ventana ago-nov 2022.
 
-        P_2022 = P_2018 * mediana(INPC_t / INPC_base),  t en ago-nov 2022
+        P_2022 = P_jul2018 * mediana(INPC_t / INPC_jul2018),  t en ago-nov 2022
 
-    Misma lógica que el Gauss para 2014 (l.560-660), cambiando el año base.
+    Misma lógica que el Gauss para 2014 (l.560-660), cambiando el mes base.
     """
     from inpc_lista_productos import mapping_ciudades_inpc
     slug = {_norm(k): v for k, v in mapping_ciudades_inpc.items()}
@@ -257,7 +264,7 @@ def deflactar_precios(data_dir, pref, ciudades, ciudades_orig, verbose=True):
             sin_serie.append(nombre)
             continue
         fechas, series = _serie_inpc(ruta)
-        base = (fechas >= ANIO_BASE) & (fechas < ANIO_BASE + 1)
+        base = np.isclose(fechas, ANIO_BASE + MES_BASE / 100)      # N16
         vent = (fechas >= ANIO_ENIGH + MES_INI / 100) & (fechas <= ANIO_ENIGH + MES_FIN / 100)
         for gen, serie in series.items():
             b = np.nanmedian(serie[base])
@@ -310,7 +317,7 @@ def precios_materiales(data_dir, ciudades, ciudades_orig, base=100.0, verbose=Tr
                        .to_numpy(float))
 
     P = np.full(len(ciudades), np.nan)
-    base_m = (fechas >= ANIO_BASE) & (fechas < ANIO_BASE + 1)
+    base_m = np.isclose(fechas, ANIO_BASE + MES_BASE / 100)        # N16
     vent = (fechas >= ANIO_ENIGH + MES_INI / 100) & (fechas <= ANIO_ENIGH + MES_FIN / 100)
     for i, c in enumerate(ciudades):
         nom = _norm(str(ciudades_orig[c]).split(',')[0])
@@ -340,7 +347,7 @@ def ingreso_monetario(data_dir, hogares, corte=CORTE_MONETARIO):
     """Reconstruye `ing_mon` sumando las claves monetarias de ingresos.csv.
 
     Devuelve una serie alineada con `hogares` (ids folioviv_foliohog).
-    Ver `CORTE_MONETARIO`: el corte es una inferencia pendiente de confirmar.
+    Ver `CORTE_MONETARIO`: por defecto se usan todas las claves.
     """
     ing = pd.read_csv(data_dir + 'ingresos.csv',
                       usecols=['folioviv', 'foliohog', 'clave', 'ing_tri'],
@@ -356,7 +363,7 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
     """Carga la ENIGH 2022 y devuelve un `DatosAnio`.
 
     `corte_monetario` fija hasta qué clave P### se considera ingreso monetario;
-    se expone como argumento porque es el parámetro pendiente de confirmar.
+    se expone como argumento para poder reproducir la prueba con P067.
     """
     if not data_dir.endswith('/'):
         data_dir += '/'
@@ -414,9 +421,11 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
     geo['mun_n'] = geo['NOM_MUN'].map(_norm)
     geo['ent_n'] = geo['NOM_ABR'].map(lambda x: _norm(x).replace('.', ''))
     cab = (geo.sort_values('pob', ascending=False)
-              .groupby(['ent_n', 'mun_n'])[['LAT_DECIMAL', 'LON_DECIMAL']].first())
+              .groupby(['ent_n', 'mun_n'])[['LAT_DECIMAL', 'LON_DECIMAL', 'clave']].first())
 
-    cd_lat, cd_lon, sin_coord = [], [], []
+    # cd_clave: clave INEGI de municipio (ent+mun) de cada ciudad, para cruzar
+    # los Censos Económicos por municipio y no por posición (N15)
+    cd_lat, cd_lon, cd_clave, sin_coord = [], [], [], []
     for c in ciudades:
         mun, ent = _municipio_de_ciudad(ciudades_orig[c])
         ent_n = _norm(ent).replace('.', '')
@@ -427,7 +436,10 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
             # nombre corto de INEGI ("Oaxaca, Oax.") contra el municipio
             # completo ("Oaxaca de Juárez"): buscar por prefijo en la entidad
             en_ent = cab.xs(ent_n, level='ent_n')
-            pre = [m for m in en_ent.index if m.startswith(mun)]
+            # Primero palabra completa: "iguala" debe dar "iguala de la
+            # independencia", no "igualapa" (otro municipio, más corto).
+            pre = ([m for m in en_ent.index if m.startswith(mun + ' ')]
+                   or [m for m in en_ent.index if m.startswith(mun)])
             if pre:
                 fila = en_ent.loc[sorted(pre, key=len)[0]]
         if fila is None and mun in cab.index.get_level_values('mun_n'):
@@ -435,10 +447,11 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
             fila = cand.iloc[0] if len(cand) == 1 else None
         if fila is None:
             sin_coord.append(c)
-            cd_lat.append(np.nan); cd_lon.append(np.nan)
+            cd_lat.append(np.nan); cd_lon.append(np.nan); cd_clave.append(None)
         else:
             cd_lat.append(float(fila['LAT_DECIMAL']))
             cd_lon.append(float(fila['LON_DECIMAL']))
+            cd_clave.append(str(fila['clave']))
     if sin_coord:
         raise ValueError(f"ciudades INPC sin coordenadas: {sin_coord}")
     if verbose:
@@ -459,12 +472,8 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
         print(f'Hogares después de filtro de distancia (<=400 km): {len(conc)}')
 
     # --- precios por ciudad y producto -------------------------------------
-    # PENDIENTE: deflactar de 2018 a la ventana ago-nov 2022 con las series de
-    # `data_ciudades/`. Por ahora se usan los precios de referencia 2018 tal
-    # cual, lo que deja los NIVELES desfasados (~8 puntos de inflación
-    # acumulada) pero conserva la variación ENTRE ciudades, que es la que
-    # identifica las elasticidades. No usar los markups ni la VE en pesos
-    # hasta cerrar esto.
+    # Precios de referencia 2018 deflactados a ago-nov 2022 con la serie INPC
+    # de cada ciudad (`data_ciudades/`).
     factores = deflactar_precios(data_dir, pref, ciudades, ciudades_orig, verbose)
     fac_global = float(np.median(list(factores.values()))) if factores else 1.0
 
@@ -473,7 +482,6 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
         if prod == 'materiales':
             # Materiales de construcción no cotiza en el archivo de precios:
             # va por INPP, igual que en 2014, donde la referencia es índice 100.
-            # PENDIENTE: deflactar con inpp_construccion.CSV.
             P_ciudad[prod] = precios_materiales(
                 data_dir, ciudades, ciudades_orig, verbose=verbose)
             continue
@@ -482,7 +490,13 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
             pref.get((c, g), np.nan) for c in ciudades], dtype=float)
         if np.isnan(P_ciudad[prod]).all():
             raise ValueError(f"sin precios para el genérico {gen!r} ({prod})")
-        # ciudades sin cotización del producto: se imputa la mediana nacional
+        # ciudades sin cotización del producto: se imputa la mediana nacional.
+        # Imputar en muchas ciudades borra la variación transversal que
+        # identifica β_η, así que se avisa (caso: pan de caja, ver P1).
+        faltan = int(np.isnan(P_ciudad[prod]).sum())
+        if verbose and faltan > 5:
+            print(f'  ⚠ {prod}: precio imputado (mediana) en {faltan} de '
+                  f'{len(ciudades)} ciudades')
         med = np.nanmedian(P_ciudad[prod])
         P_ciudad[prod] = np.where(np.isnan(P_ciudad[prod]), med, P_ciudad[prod])
         # deflactar 2018 -> ago-nov 2022 con la serie INPC de cada ciudad
@@ -568,7 +582,8 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
                          (conc['tam_loc'] == 4).to_numpy(float), veh * lav])
 
     # --- variables de costo (Censos Económicos) -----------------------------
-    vars_costos = _vars_costos(data_dir, ciudades)
+    vars_costos = _vars_costos(data_dir, cd_clave,
+                               [ciudades_orig[c] for c in ciudades], verbose)
 
     datos = DatosAnio(
         anio=2022, n_cat=n_cat,
@@ -593,22 +608,45 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
     return datos
 
 
-def _vars_costos(data_dir, ciudades):
-    """Variables de costo por ciudad, de los Censos Económicos 2023.
+def _vars_costos(data_dir, claves_ciudad, nombres=None, verbose=True):
+    """Variables de costo por ciudad, de los Censos Económicos (año censal 2023).
 
-    Mismas siete variables que en 2014 (Gauss l.6205): producción bruta por UE,
-    unidades económicas, personal por UE, remuneraciones por UE, consumo
-    intermedio por UE, activos por UE y depreciación por UE.
+    Mismas siete variables que en 2014 (Gauss l.6205), en el mismo orden:
+    producción bruta por UE, unidades económicas, personal ocupado por UE,
+    remuneraciones por UE, consumo intermedio por UE, activos fijos por UE y
+    depreciación por UE.
+
+    CORRECCIÓN N15: se cruza por clave de municipio y por código de variable.
+    La versión anterior leía con `skiprows=13` (perdía los ocho primeros
+    municipios), tomaba columnas por posición (cuatro de las siete variables
+    eran otras) y asignaba filas por orden: ninguna de las 46 ciudades recibía
+    sus propios datos. Fresnillo viene en archivo aparte y con otro orden de
+    columnas, por eso se lee por nombre.
     """
-    df = pd.read_csv(data_dir + 'censo_economico_2023.csv', skiprows=13,
-                     header=None, encoding='latin-1')
-    df = df[df[3].astype(str).str.contains('Total municipal', na=False)]
-    num = df.iloc[:, 4:].apply(pd.to_numeric, errors='coerce')
-    UE = num.iloc[:, 0].to_numpy(float)
+    tablas = []
+    for arch in ('censo_economico_2023.csv', 'censo_economico_fresnillo_2023.csv'):
+        df = pd.read_csv(data_dir + arch, skiprows=4, encoding='utf-8-sig')
+        df = df[df['Actividad económica'].astype(str).str.contains('Total municipal', na=False)]
+        clave = df['Entidad'].astype(str).str[:2] + df['Municipio'].astype(str).str[:3]
+        # "A111A Producción bruta total (millones de pesos)" -> "A111A"
+        df = df.rename(columns={c: str(c).split(' ')[0] for c in df.columns})
+        tablas.append(df.assign(clave=clave).set_index('clave'))
+    cols = ['A111A', 'UE', 'H001A', 'J000A', 'A121A', 'Q000A', 'Q000B']
+    censo = pd.concat(tablas)[cols].apply(pd.to_numeric, errors='coerce')
+
+    M = censo.reindex(claves_ciudad)
+    UE = M['UE']
     with np.errstate(divide='ignore', invalid='ignore'):
-        cols = [num.iloc[:, k].to_numpy(float) / UE for k in (4, 2, 3, 5, 6, 7)]
-    M = np.column_stack([cols[0], UE] + cols[1:])
-    M = np.where(np.isfinite(M), M, 0.0)
-    if len(M) < len(ciudades):      # el censo no cubre todas las ciudades
-        M = np.vstack([M, np.tile(np.median(M, axis=0), (len(ciudades) - len(M), 1))])
-    return M[:len(ciudades)]
+        X = np.column_stack([M['A111A'] / UE, UE, M['H001A'] / UE, M['J000A'] / UE,
+                             M['A121A'] / UE, M['Q000A'] / UE, M['Q000B'] / UE]).astype(float)
+    X = np.where(np.isfinite(X), X, np.nan)
+    faltan = np.isnan(X).any(axis=1)
+    if faltan.any():
+        X = np.where(np.isnan(X), np.nanmedian(X, axis=0), X)
+    if verbose:
+        nom = nombres or [str(c) for c in claves_ciudad]
+        msj = f'  variables de costo: censo propio en {int((~faltan).sum())} de {len(X)} ciudades'
+        if faltan.any():
+            msj += f'; mediana imputada en {[nom[i] for i in np.flatnonzero(faltan)]}'
+        print(msj)
+    return X
