@@ -599,6 +599,7 @@ def cargar(data_dir, corte_monetario=CORTE_MONETARIO, verbose=True):
         ingreso_cor=conc['ing_cor'].to_numpy(float),
         ingreso_cor_completo=ing_cor_todos,
         n_ciudades=len(ciudades), vars_costos=vars_costos,
+        claves_ciudad=cd_clave,
         precios_producto_ciudad=P_ciudad,
         gastos_producto=gastos_producto, composicion=composicion,
         ingreso_mon_completo=ing_mon_todos,

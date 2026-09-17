@@ -504,12 +504,20 @@ def elasticidades(modelo, pm, Z, epsilon, wm, sg, pi, demandas_orig,
 # SECCIÓN 7 — Markups y poder de mercado (NEIO, Bresnahan 1989)
 # ===========================================================================
 def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
-                    factor_out=FACTOR_OUT, markup_max=5.0):
+                    factor_out=FACTOR_OUT, markup_max=5.0, nombres=None):
     """Estima β_η por categoría y deriva los markups por ciudad.
 
     Modelo de sobreprecios (ecuación 17 del paper): se regresa el precio de
     cada ciudad sobre η_m = -p_m/ε_m y las variables de costo de los Censos
     Económicos, con errores estándar de White y remoción de outliers por IQR.
+
+    `vars_costos` puede ser:
+    * una matriz (n_ciudades, k) — los mismos controles para todas las
+      categorías, que es lo que hace el Gauss (divergencia D-H); o
+    * un dict {nombre_categoría: matriz (n_ciudades, k)} — controles
+      específicos por categoría, como declara el paper (Cuadros 6 y 7). Requiere
+      `nombres`. Ver `costos_saic.py`. Las ciudades con algún control faltante
+      se excluyen de esa regresión, y las columnas sin variación se descartan.
 
     Nota: cuando las elasticidades están comprimidas hacia -1, η_m ≈ p_m y la
     regresión devuelve β ≈ 1 con t enormes por colinealidad casi perfecta. Eso
@@ -520,16 +528,45 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
     t_eta = np.zeros(n_cat)
     se_eta = np.zeros(n_cat)
     markup = np.ones((n_ciudades, n_cat))
+    por_categoria = isinstance(vars_costos, dict)
+    # Diagnóstico por categoría: ciudades y controles que entraron de verdad a
+    # la regresión. Sin esto, una categoría sin controles específicos se ve
+    # igual que una bien estimada.
+    n_obs = np.zeros(n_cat, dtype=int)
+    n_ctrl = np.zeros(n_cat, dtype=int)
 
     for j in range(n_cat):
         p_m = precios_ciudad[:, j]
         e_m = elastic_ciudad[:, j]
-        neg = e_m < 0
+        Xc = np.asarray(vars_costos[nombres[j]] if por_categoria else vars_costos,
+                        dtype=float)
+        if Xc.ndim == 1:
+            Xc = Xc[:, None]
+        neg = (e_m < 0) & ~np.isnan(Xc).all(axis=1)
         if neg.sum() < 5:
             continue
 
+        # Qué hacer con los huecos del censo (celdas suprimidas por
+        # confidencialidad): descartar CIUDADES conserva los controles
+        # específicos de la categoría, que es lo que se quiere medir; descartar
+        # COLUMNAS conserva ciudades pero puede dejar solo los controles
+        # generales de mercado —y entonces la regresión ya no es "por sector"
+        # aunque lo parezca—. Se prefiere lo primero mientras queden grados de
+        # libertad; si no, se deja sin identificar.
+        completas = neg & ~np.isnan(Xc).any(axis=1)
+        var_ok = np.nanstd(Xc[completas], axis=0) > 0 if completas.sum() else np.zeros(Xc.shape[1], bool)
+        if completas.sum() >= int(var_ok.sum()) + 7:      # +1 por eta, +1 intercepto, +5 de holgura
+            neg, Xc = completas, Xc[:, var_ok]
+        else:
+            util = ~np.isnan(Xc[neg]).any(axis=0) & (np.nanstd(Xc[neg], axis=0) > 0)
+            Xc = Xc[:, util]
+            neg &= ~np.isnan(Xc).any(axis=1)
+        if neg.sum() < 5 or Xc.shape[1] == 0:
+            continue
+        n_obs[j], n_ctrl[j] = int(neg.sum()), int(Xc.shape[1])
+
         eta = -p_m[neg] * (1.0 / e_m[neg])
-        X = np.column_stack([eta, vars_costos[neg]])
+        X = np.column_stack([eta, Xc[neg]])
         Y = p_m[neg]
 
         out = np.zeros(X.shape[0], dtype=bool)
@@ -538,7 +575,13 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
             iqr = q75 - q25
             out |= (X[:, c] < q25 - factor_out * iqr) | (X[:, c] > q75 + factor_out * iqr)
         X, Y = X[~out], Y[~out]
-        if X.shape[0] < 4:
+        # Grados de libertad: con controles por categoría hay regresiones que se
+        # quedan con muy pocas ciudades (la confidencialidad del censo suprime
+        # celdas) y la matriz X'X queda casi singular: el error estándar colapsa
+        # y produce estadísticos t absurdos (se llegó a ver t = 5.5e6). Sin al
+        # menos 5 ciudades por encima del número de regresores, el parámetro no
+        # está identificado y se reporta como tal.
+        if X.shape[0] < X.shape[1] + 5:
             continue
 
         n = X.shape[0]
@@ -557,9 +600,13 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
         except np.linalg.LinAlgError:
             se = float("nan")
 
+        # Un error estándar no finito o numéricamente nulo no es precisión: es
+        # una regresión mal condicionada. Se reporta el β pero sin significancia.
+        if not math.isfinite(se) or se <= 1e-10 * max(1.0, abs(b[0])):
+            se = float("nan")
         beta_eta[j] = b[0]
         se_eta[j] = se
-        t_eta[j] = b[0] / se if se and se > 0 else 0.
+        t_eta[j] = b[0] / se if math.isfinite(se) and se > 0 else 0.
 
         b_cap = min(b[0], 1.0)
         e_prom = e_m[neg].mean()
@@ -581,7 +628,8 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
     markup_lerner = 1.0 + np.clip(tasa, 0.0, markup_max - 1.0)
 
     return {"beta_eta": beta_eta, "t_eta": t_eta, "se_eta": se_eta,
-            "markup": markup, "markup_lerner": markup_lerner}
+            "markup": markup, "markup_lerner": markup_lerner,
+            "n_obs": n_obs, "n_ctrl": n_ctrl}
 
 
 # ===========================================================================

@@ -69,6 +69,12 @@ class DatosAnio:
     # dejó de publicarlo, y por eso la comparación entre años usa `ingreso_cor`.
     ingreso_total: np.ndarray = None
 
+    # Clave INEGI de municipio (ent+mun, 5 dígitos) de cada una de las
+    # n_ciudades, en el mismo orden. Para CDMX se usa la clave de entidad ('09'),
+    # que es como aparece en los Censos Económicos. Sirve para cruzar cualquier
+    # fuente por municipio; hoy la usan `_vars_costos` y `costos_saic.py` (D-H).
+    claves_ciudad: list = None
+
     # --- sub-categorías con tratamiento especial ---
     # Transporte foráneo agrega autobús + aéreo en una sola categoría con
     # índice Divisia; sus elasticidades se reportan por separado perturbando

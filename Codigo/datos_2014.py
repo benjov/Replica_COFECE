@@ -227,6 +227,13 @@ def cargar(data_dir, verbose=True):
 
     P46, c46_lat, c46_lon = _precios_por_ciudad(data_dir)
 
+    # Clave INEGI (ent+mun) de las 46 ciudades, en el orden del archivo de
+    # precios de referencia. CDMX va como entidad ('09'), que es como aparece en
+    # los Censos Económicos (el Gauss usa su total estatal). Ver costos_saic.py.
+    _ref = np.loadtxt(data_dir + 'precios_promedio_46_ciudades_junio_2011.asc')
+    claves_ciudad = ['09' if int(e) == 9 else f'{int(e):02d}{int(m):03d}'
+                     for e, m in zip(_ref[:, 0], _ref[:, 1])]
+
     # --- microdatos ---------------------------------------------------------
     mun = np.loadtxt(data_dir + 'datos_municipios_latitud_longitud.asc')
     conc = np.loadtxt(data_dir + 'datos_concentrado_hogares_enigh_2014.asc')
@@ -353,6 +360,7 @@ def cargar(data_dir, verbose=True):
         ingreso_total=conc[:, COL_ING_TOTAL],
         ingreso_cor_completo=ingreso_cor_completo,
         n_ciudades=N_CIUDADES, vars_costos=_vars_costos(data_dir),
+        claves_ciudad=claves_ciudad,
         precios_producto_ciudad={p: P46[p] for p in gastos_producto},
         gastos_producto=gastos_producto, composicion=composicion,
         ingreso_mon_completo=ingreso_mon_completo,
