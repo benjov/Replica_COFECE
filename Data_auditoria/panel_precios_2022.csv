@@ -1,0 +1,644 @@
+ciudad,generico,clave,unidad,n,precio_mediano
+"Acapulco, Gro.",Autobús foráneo,227,BOLETO,16,603.0
+"Acapulco, Gro.",Carne de res,18,KG,136,171.125
+"Acapulco, Gro.",Huevo,32,DOCENA,4,33.53
+"Acapulco, Gro.",Huevo,32,PAQ,12,78.375
+"Acapulco, Gro.",Jitomate,71,KG,24,24.25
+"Acapulco, Gro.",Leche pasteurizada y fresca,36,LT,28,25.564999999999998
+"Acapulco, Gro.",Manzana,50,KG,20,51.265
+"Acapulco, Gro.",Pan blanco,8,PZA,16,5.5
+"Acapulco, Gro.",Pan de caja,9,KG,20,74.07
+"Acapulco, Gro.",Pollo,22,KG,52,55.75
+"Acapulco, Gro.",Pollo,22,PZA,44,135.0
+"Acapulco, Gro.",Refrescos envasados,101,LT,32,24.0
+"Acapulco, Gro.",Tortilla de maíz,14,KG,40,27.25
+"Acapulco, Gro.",Transporte aéreo,232,VIAJE,16,1808.125
+"Aguascalientes, Ags.",Autobús foráneo,227,BOLETO,4,95.0
+"Aguascalientes, Ags.",Autobús foráneo,227,VIAJE,16,595.0
+"Aguascalientes, Ags.",Carne de res,18,KG,176,175.03
+"Aguascalientes, Ags.",Huevo,32,KG,28,46.0
+"Aguascalientes, Ags.",Huevo,32,PAQ,4,80.55000000000001
+"Aguascalientes, Ags.",Jitomate,71,KG,60,23.875
+"Aguascalientes, Ags.",Leche pasteurizada y fresca,36,LT,44,20.7
+"Aguascalientes, Ags.",Manzana,50,KG,36,41.715
+"Aguascalientes, Ags.",Pan blanco,8,PZA,28,7.0
+"Aguascalientes, Ags.",Pan de caja,9,KG,32,82.28999999999999
+"Aguascalientes, Ags.",Pollo,22,KG,104,65.0
+"Aguascalientes, Ags.",Pollo,22,PZA,4,46.515
+"Aguascalientes, Ags.",Refrescos envasados,101,LT,40,13.3
+"Aguascalientes, Ags.",Tortilla de maíz,14,KG,72,22.0
+"Aguascalientes, Ags.",Transporte aéreo,232,VIAJE,16,2391.0
+"Campeche, Camp.",Autobús foráneo,227,BOLETO,16,454.0
+"Campeche, Camp.",Carne de res,18,KG,212,178.75
+"Campeche, Camp.",Huevo,32,DOCENA,8,33.75
+"Campeche, Camp.",Huevo,32,KG,4,43.0
+"Campeche, Camp.",Huevo,32,PAQ,28,68.5
+"Campeche, Camp.",Jitomate,71,KG,64,25.875
+"Campeche, Camp.",Leche pasteurizada y fresca,36,LT,40,21.35
+"Campeche, Camp.",Manzana,50,KG,32,49.95
+"Campeche, Camp.",Pan blanco,8,PZA,36,7.0
+"Campeche, Camp.",Pan de caja,9,KG,32,107.88999999999999
+"Campeche, Camp.",Pollo,22,KG,112,65.0
+"Campeche, Camp.",Refrescos envasados,101,LT,44,25.78
+"Campeche, Camp.",Tortilla de maíz,14,KG,60,23.0
+"Campeche, Camp.",Transporte aéreo,232,VIAJE,16,3569.75
+"Cd. Acuña, Coah.",Autobús foráneo,227,VIAJE,8,1421.0
+"Cd. Acuña, Coah.",Carne de res,18,KG,68,159.0
+"Cd. Acuña, Coah.",Huevo,32,DOCENA,4,45.245000000000005
+"Cd. Acuña, Coah.",Huevo,32,KG,4,49.59
+"Cd. Acuña, Coah.",Huevo,32,PAQ,8,79.495
+"Cd. Acuña, Coah.",Jitomate,71,KG,24,27.994999999999997
+"Cd. Acuña, Coah.",Leche pasteurizada y fresca,36,LT,24,27.384999999999998
+"Cd. Acuña, Coah.",Manzana,50,KG,16,39.474999999999994
+"Cd. Acuña, Coah.",Pan blanco,8,PZA,16,2.4
+"Cd. Acuña, Coah.",Pan de caja,9,KG,16,83.625
+"Cd. Acuña, Coah.",Pollo,22,KG,24,68.7
+"Cd. Acuña, Coah.",Refrescos envasados,101,LT,24,14.4
+"Cd. Acuña, Coah.",Tortilla de maíz,14,KG,40,25.0
+"Cd. Acuña, Coah.",Transporte aéreo,232,VIAJE,8,5174.25
+"Cd. Juárez, Chih.",Autobús foráneo,227,VIAJE,16,1103.0
+"Cd. Juárez, Chih.",Carne de res,18,KG,136,189.99
+"Cd. Juárez, Chih.",Huevo,32,DOCENA,4,38.94
+"Cd. Juárez, Chih.",Huevo,32,PAQ,16,82.05000000000001
+"Cd. Juárez, Chih.",Jitomate,71,KG,20,28.5
+"Cd. Juárez, Chih.",Leche pasteurizada y fresca,36,LT,20,24.5
+"Cd. Juárez, Chih.",Manzana,50,KG,20,42.195
+"Cd. Juárez, Chih.",Pan blanco,8,PZA,24,4.4350000000000005
+"Cd. Juárez, Chih.",Pan de caja,9,KG,20,68.0
+"Cd. Juárez, Chih.",Pollo,22,KG,52,45.0
+"Cd. Juárez, Chih.",Refrescos envasados,101,LT,20,23.33
+"Cd. Juárez, Chih.",Tortilla de maíz,14,KG,28,16.525
+"Cd. Juárez, Chih.",Transporte aéreo,232,VIAJE,16,2398.375
+"Chetumal, Q. Roo.",Autobús foráneo,227,VIAJE,12,400.0
+"Chetumal, Q. Roo.",Carne de res,18,KG,80,159.5
+"Chetumal, Q. Roo.",Huevo,32,DOCENA,8,36.04
+"Chetumal, Q. Roo.",Huevo,32,KG,4,44.34
+"Chetumal, Q. Roo.",Huevo,32,PAQ,4,25.75
+"Chetumal, Q. Roo.",Jitomate,71,KG,36,30.25
+"Chetumal, Q. Roo.",Leche pasteurizada y fresca,36,LT,20,27.0
+"Chetumal, Q. Roo.",Manzana,50,KG,24,63.5
+"Chetumal, Q. Roo.",Pan blanco,8,PZA,24,3.5
+"Chetumal, Q. Roo.",Pan de caja,9,KG,24,109.225
+"Chetumal, Q. Roo.",Pollo,22,KG,52,63.25
+"Chetumal, Q. Roo.",Refrescos envasados,101,LT,24,27.42
+"Chetumal, Q. Roo.",Tortilla de maíz,14,KG,16,24.0
+"Chetumal, Q. Roo.",Transporte aéreo,232,VIAJE,8,6142.31
+"Chihuahua, Chih.",Autobús foráneo,227,BOLETO,12,1609.0
+"Chihuahua, Chih.",Autobús foráneo,227,VIAJE,4,167.0
+"Chihuahua, Chih.",Carne de res,18,KG,184,176.995
+"Chihuahua, Chih.",Huevo,32,KG,12,55.0
+"Chihuahua, Chih.",Huevo,32,PAQ,8,48.95
+"Chihuahua, Chih.",Jitomate,71,KG,44,28.130000000000003
+"Chihuahua, Chih.",Leche pasteurizada y fresca,36,LT,20,25.0
+"Chihuahua, Chih.",Manzana,50,KG,32,32.04
+"Chihuahua, Chih.",Pan blanco,8,PZA,20,6.0
+"Chihuahua, Chih.",Pan de caja,9,KG,20,95.30000000000001
+"Chihuahua, Chih.",Pollo,22,KG,72,64.0
+"Chihuahua, Chih.",Refrescos envasados,101,LT,20,21.0
+"Chihuahua, Chih.",Tortilla de maíz,14,KG,28,24.0
+"Chihuahua, Chih.",Transporte aéreo,232,VIAJE,16,3185.25
+"Colima, Col.",Autobús foráneo,227,BOLETO,24,171.75
+"Colima, Col.",Carne de res,18,KG,216,175.0
+"Colima, Col.",Huevo,32,DOCENA,4,35.5
+"Colima, Col.",Huevo,32,KG,16,40.25
+"Colima, Col.",Huevo,32,PAQ,12,78.965
+"Colima, Col.",Jitomate,71,KG,68,23.625
+"Colima, Col.",Leche pasteurizada y fresca,36,LT,48,22.0
+"Colima, Col.",Manzana,50,KG,64,58.0
+"Colima, Col.",Pan blanco,8,PZA,28,8.0
+"Colima, Col.",Pan de caja,9,KG,52,76.08500000000001
+"Colima, Col.",Pollo,22,KG,112,87.0
+"Colima, Col.",Refrescos envasados,101,LT,36,22.5
+"Colima, Col.",Tortilla de maíz,14,KG,48,25.0
+"Colima, Col.",Transporte aéreo,232,VIAJE,16,1581.0
+"Cortazar, Gto.",Autobús foráneo,227,VIAJE,8,307.125
+"Cortazar, Gto.",Carne de res,18,KG,68,180.0
+"Cortazar, Gto.",Huevo,32,KG,12,44.625
+"Cortazar, Gto.",Huevo,32,PAQ,4,54.1
+"Cortazar, Gto.",Jitomate,71,KG,12,27.875
+"Cortazar, Gto.",Leche pasteurizada y fresca,36,LT,32,23.5
+"Cortazar, Gto.",Manzana,50,KG,32,45.54
+"Cortazar, Gto.",Pan blanco,8,PZA,24,4.25
+"Cortazar, Gto.",Pan de caja,9,KG,28,68.75
+"Cortazar, Gto.",Pollo,22,KG,28,61.25
+"Cortazar, Gto.",Refrescos envasados,101,LT,36,24.17
+"Cortazar, Gto.",Tortilla de maíz,14,KG,36,22.0
+"Cortazar, Gto.",Transporte aéreo,232,VIAJE,8,2196.75
+"Cuernavaca, Mor.",Autobús foráneo,227,BOLETO,16,149.5
+"Cuernavaca, Mor.",Carne de res,18,KG,180,180.0
+"Cuernavaca, Mor.",Huevo,32,KG,20,43.0
+"Cuernavaca, Mor.",Huevo,32,PAQ,4,54.36
+"Cuernavaca, Mor.",Jitomate,71,KG,36,24.5
+"Cuernavaca, Mor.",Leche pasteurizada y fresca,36,LT,32,22.78
+"Cuernavaca, Mor.",Manzana,50,KG,32,45.7
+"Cuernavaca, Mor.",Pan blanco,8,PZA,32,3.0
+"Cuernavaca, Mor.",Pan de caja,9,KG,24,94.3
+"Cuernavaca, Mor.",Pollo,22,KG,84,69.125
+"Cuernavaca, Mor.",Refrescos envasados,101,LT,28,11.5
+"Cuernavaca, Mor.",Tortilla de maíz,14,KG,40,23.0
+"Cuernavaca, Mor.",Transporte aéreo,232,VIAJE,16,2893.75
+"Culiacán, Sin.",Autobús foráneo,227,BOLETO,28,350.0
+"Culiacán, Sin.",Carne de res,18,KG,140,198.0
+"Culiacán, Sin.",Huevo,32,DOCENA,8,50.0
+"Culiacán, Sin.",Huevo,32,KG,4,57.0
+"Culiacán, Sin.",Huevo,32,PAQ,20,89.5
+"Culiacán, Sin.",Jitomate,71,KG,40,31.75
+"Culiacán, Sin.",Leche pasteurizada y fresca,36,LT,36,26.0
+"Culiacán, Sin.",Manzana,50,KG,40,50.25
+"Culiacán, Sin.",Pan blanco,8,PZA,24,2.775
+"Culiacán, Sin.",Pan de caja,9,KG,28,106.50999999999999
+"Culiacán, Sin.",Pollo,22,KG,52,75.95
+"Culiacán, Sin.",Refrescos envasados,101,LT,48,24.535
+"Culiacán, Sin.",Tortilla de maíz,14,KG,44,24.25
+"Culiacán, Sin.",Tortilla de maíz,14,PAQ,4,22.0
+"Culiacán, Sin.",Transporte aéreo,232,VIAJE,16,1589.4650000000001
+"Córdoba, Ver.",Autobús foráneo,227,BOLETO,8,26.5
+"Córdoba, Ver.",Autobús foráneo,227,VIAJE,16,372.5
+"Córdoba, Ver.",Carne de res,18,KG,136,159.5
+"Córdoba, Ver.",Huevo,32,KG,20,44.14
+"Córdoba, Ver.",Huevo,32,PAQ,8,63.475
+"Córdoba, Ver.",Jitomate,71,KG,28,20.189999999999998
+"Córdoba, Ver.",Leche pasteurizada y fresca,36,LT,20,24.325
+"Córdoba, Ver.",Manzana,50,KG,20,49.15
+"Córdoba, Ver.",Pan blanco,8,PZA,20,3.25
+"Córdoba, Ver.",Pan de caja,9,KG,16,90.50999999999999
+"Córdoba, Ver.",Pollo,22,KG,52,54.125
+"Córdoba, Ver.",Refrescos envasados,101,LT,36,21.67
+"Córdoba, Ver.",Tortilla de maíz,14,KG,24,16.75
+"Córdoba, Ver.",Transporte aéreo,232,VIAJE,16,1950.625
+"Durango, Dgo.",Autobús foráneo,227,BOLETO,4,1600.0
+"Durango, Dgo.",Autobús foráneo,227,VIAJE,16,1743.0
+"Durango, Dgo.",Carne de res,18,KG,156,160.525
+"Durango, Dgo.",Huevo,32,KG,28,39.995000000000005
+"Durango, Dgo.",Huevo,32,PAQ,8,63.099999999999994
+"Durango, Dgo.",Jitomate,71,KG,44,22.825
+"Durango, Dgo.",Leche pasteurizada y fresca,36,LT,40,23.314999999999998
+"Durango, Dgo.",Manzana,50,KG,28,43.775
+"Durango, Dgo.",Pan blanco,8,PZA,32,4.0
+"Durango, Dgo.",Pan de caja,9,KG,32,111.38
+"Durango, Dgo.",Pollo,22,KG,48,92.45
+"Durango, Dgo.",Refrescos envasados,101,LT,36,16.415
+"Durango, Dgo.",Tortilla de maíz,14,KG,44,19.0
+"Durango, Dgo.",Transporte aéreo,232,VIAJE,16,3440.25
+"Fresnillo, Zac.",Autobús foráneo,227,BOLETO,8,1107.0
+"Fresnillo, Zac.",Carne de res,18,KG,68,213.0
+"Fresnillo, Zac.",Huevo,32,KG,16,41.375
+"Fresnillo, Zac.",Jitomate,71,KG,36,21.125
+"Fresnillo, Zac.",Leche pasteurizada y fresca,36,LT,16,19.11
+"Fresnillo, Zac.",Manzana,50,KG,20,56.875
+"Fresnillo, Zac.",Pan blanco,8,PZA,16,7.0
+"Fresnillo, Zac.",Pan de caja,9,KG,16,69.85499999999999
+"Fresnillo, Zac.",Pollo,22,KG,48,95.0
+"Fresnillo, Zac.",Refrescos envasados,101,LT,16,30.21
+"Fresnillo, Zac.",Tortilla de maíz,14,KG,40,22.0
+"Fresnillo, Zac.",Tortilla de maíz,14,PAQ,4,23.0
+"Fresnillo, Zac.",Transporte aéreo,232,VIAJE,8,2778.75
+"Guadalajara, Jal.",Autobús foráneo,227,BOLETO,8,1279.5
+"Guadalajara, Jal.",Autobús foráneo,227,VIAJE,24,755.75
+"Guadalajara, Jal.",Carne de res,18,KG,212,180.0
+"Guadalajara, Jal.",Carne de res,18,PZA,4,186.0
+"Guadalajara, Jal.",Huevo,32,KG,16,44.25
+"Guadalajara, Jal.",Huevo,32,PAQ,12,54.565
+"Guadalajara, Jal.",Jitomate,71,KG,52,29.0
+"Guadalajara, Jal.",Leche pasteurizada y fresca,36,LT,40,20.4
+"Guadalajara, Jal.",Manzana,50,KG,36,56.875
+"Guadalajara, Jal.",Manzana,50,PZA,4,50.0
+"Guadalajara, Jal.",Pan blanco,8,PZA,28,6.0
+"Guadalajara, Jal.",Pan de caja,9,KG,40,83.72999999999999
+"Guadalajara, Jal.",Pollo,22,KG,132,71.25
+"Guadalajara, Jal.",Refrescos envasados,101,LT,48,21.67
+"Guadalajara, Jal.",Tortilla de maíz,14,KG,52,21.0
+"Guadalajara, Jal.",Tortilla de maíz,14,PAQ,4,23.5
+"Guadalajara, Jal.",Transporte aéreo,232,VIAJE,24,1145.0
+"Hermosillo, Son.",Autobús foráneo,227,VIAJE,16,1113.875
+"Hermosillo, Son.",Carne de res,18,KG,140,205.9
+"Hermosillo, Son.",Huevo,32,DOCENA,4,39.25
+"Hermosillo, Son.",Huevo,32,PAQ,16,83.25
+"Hermosillo, Son.",Jitomate,71,KG,44,27.95
+"Hermosillo, Son.",Leche pasteurizada y fresca,36,LT,28,22.814999999999998
+"Hermosillo, Son.",Manzana,50,KG,32,46.775
+"Hermosillo, Son.",Pan blanco,8,PZA,28,7.0
+"Hermosillo, Son.",Pan de caja,9,KG,20,108.47
+"Hermosillo, Son.",Pollo,22,KG,56,50.75
+"Hermosillo, Son.",Refrescos envasados,101,LT,32,24.585
+"Hermosillo, Son.",Tortilla de maíz,14,KG,36,28.0
+"Hermosillo, Son.",Transporte aéreo,232,VIAJE,16,2404.295
+"Huatabampo, Son.",Autobús foráneo,227,BOLETO,12,60.0
+"Huatabampo, Son.",Carne de res,18,KG,68,164.9
+"Huatabampo, Son.",Huevo,32,PAQ,16,82.125
+"Huatabampo, Son.",Jitomate,71,KG,20,31.549999999999997
+"Huatabampo, Son.",Leche pasteurizada y fresca,36,LT,20,25.65
+"Huatabampo, Son.",Manzana,50,KG,20,45.845
+"Huatabampo, Son.",Pan blanco,8,PZA,20,2.5
+"Huatabampo, Son.",Pan de caja,9,KG,20,92.995
+"Huatabampo, Son.",Pollo,22,KG,36,57.8
+"Huatabampo, Son.",Refrescos envasados,101,LT,20,28.17
+"Huatabampo, Son.",Tortilla de maíz,14,KG,24,23.0
+"Huatabampo, Son.",Transporte aéreo,232,VIAJE,8,3681.25
+"Iguala, Gro.",Autobús foráneo,227,BOLETO,20,328.0
+"Iguala, Gro.",Carne de res,18,KG,88,151.25
+"Iguala, Gro.",Huevo,32,KG,12,30.0
+"Iguala, Gro.",Huevo,32,PAQ,4,42.625
+"Iguala, Gro.",Jitomate,71,KG,32,22.5
+"Iguala, Gro.",Leche pasteurizada y fresca,36,LT,24,26.5
+"Iguala, Gro.",Manzana,50,KG,28,51.5
+"Iguala, Gro.",Pan blanco,8,PZA,20,5.5
+"Iguala, Gro.",Pan de caja,9,KG,20,107.53999999999999
+"Iguala, Gro.",Pollo,22,KG,8,46.075
+"Iguala, Gro.",Pollo,22,PZA,32,95.625
+"Iguala, Gro.",Refrescos envasados,101,LT,24,26.205
+"Iguala, Gro.",Tortilla de maíz,14,KG,16,21.0
+"Iguala, Gro.",Transporte aéreo,232,VIAJE,8,1496.375
+"Jacona, Mich.",Autobús foráneo,227,BOLETO,12,306.0
+"Jacona, Mich.",Carne de res,18,KG,68,180.0
+"Jacona, Mich.",Huevo,32,KG,20,40.125
+"Jacona, Mich.",Huevo,32,PAQ,4,52.0
+"Jacona, Mich.",Jitomate,71,KG,36,26.6
+"Jacona, Mich.",Leche pasteurizada y fresca,36,CAJA,3,11.0
+"Jacona, Mich.",Leche pasteurizada y fresca,36,LT,29,22.0
+"Jacona, Mich.",Manzana,50,KG,20,39.69
+"Jacona, Mich.",Pan blanco,8,PZA,16,6.5
+"Jacona, Mich.",Pan de caja,9,KG,20,71.595
+"Jacona, Mich.",Pollo,22,KG,32,88.75
+"Jacona, Mich.",Refrescos envasados,101,LT,32,22.5
+"Jacona, Mich.",Tortilla de maíz,14,KG,44,26.0
+"Jacona, Mich.",Transporte aéreo,232,VIAJE,8,2193.0
+"Jiménez, Chih.",Autobús foráneo,227,BOLETO,16,242.5
+"Jiménez, Chih.",Autobús foráneo,227,VIAJE,4,462.5
+"Jiménez, Chih.",Carne de res,18,KG,68,186.0
+"Jiménez, Chih.",Huevo,32,KG,12,43.875
+"Jiménez, Chih.",Huevo,32,PAQ,4,81.1
+"Jiménez, Chih.",Jitomate,71,KG,28,28.5
+"Jiménez, Chih.",Leche pasteurizada y fresca,36,LT,20,23.305
+"Jiménez, Chih.",Manzana,50,KG,20,40.415
+"Jiménez, Chih.",Pan blanco,8,PZA,20,6.9
+"Jiménez, Chih.",Pan de caja,9,KG,16,83.505
+"Jiménez, Chih.",Pollo,22,KG,24,82.025
+"Jiménez, Chih.",Refrescos envasados,101,LT,20,23.33
+"Jiménez, Chih.",Tortilla de maíz,14,KG,40,24.0
+"Jiménez, Chih.",Transporte aéreo,232,VIAJE,8,2386.0
+"La Paz, B.C.S.",Autobús foráneo,227,BOLETO,8,1147.5
+"La Paz, B.C.S.",Autobús foráneo,227,VIAJE,12,260.0
+"La Paz, B.C.S.",Carne de res,18,KG,188,184.125
+"La Paz, B.C.S.",Huevo,32,KG,12,52.0
+"La Paz, B.C.S.",Huevo,32,PAQ,20,83.25
+"La Paz, B.C.S.",Jitomate,71,KG,52,35.0
+"La Paz, B.C.S.",Leche pasteurizada y fresca,36,LT,40,23.04
+"La Paz, B.C.S.",Manzana,50,KG,40,50.459999999999994
+"La Paz, B.C.S.",Pan blanco,8,PZA,36,5.0
+"La Paz, B.C.S.",Pan de caja,9,KG,28,91.02
+"La Paz, B.C.S.",Pollo,22,KG,88,88.0
+"La Paz, B.C.S.",Refrescos envasados,101,LT,36,29.29
+"La Paz, B.C.S.",Tortilla de maíz,14,KG,48,25.0
+"La Paz, B.C.S.",Transporte aéreo,232,VIAJE,16,3106.625
+"León, Gto.",Autobús foráneo,227,BOLETO,16,947.25
+"León, Gto.",Carne de res,18,KG,168,159.9
+"León, Gto.",Huevo,32,DOCENA,6,36.775
+"León, Gto.",Huevo,32,KG,20,40.25
+"León, Gto.",Huevo,32,PAQ,6,84.265
+"León, Gto.",Jitomate,71,KG,52,19.0
+"León, Gto.",Leche pasteurizada y fresca,36,LT,28,21.5
+"León, Gto.",Manzana,50,KG,28,42.34
+"León, Gto.",Pan blanco,8,PZA,16,3.5
+"León, Gto.",Pan de caja,9,KG,36,80.88
+"León, Gto.",Pollo,22,KG,76,79.125
+"León, Gto.",Refrescos envasados,101,LT,36,25.75
+"León, Gto.",Tortilla de maíz,14,KG,40,22.0
+"León, Gto.",Transporte aéreo,232,VIAJE,16,2351.375
+"Matamoros, Tamps.",Autobús foráneo,227,VIAJE,16,796.5
+"Matamoros, Tamps.",Carne de res,18,KG,160,160.0
+"Matamoros, Tamps.",Huevo,32,DOCENA,4,45.0
+"Matamoros, Tamps.",Huevo,32,PAQ,12,82.5
+"Matamoros, Tamps.",Jitomate,71,KG,24,29.619999999999997
+"Matamoros, Tamps.",Leche pasteurizada y fresca,36,LT,32,26.240000000000002
+"Matamoros, Tamps.",Manzana,50,KG,16,43.765
+"Matamoros, Tamps.",Pan blanco,8,PZA,20,2.665
+"Matamoros, Tamps.",Pan de caja,9,KG,20,61.76
+"Matamoros, Tamps.",Pollo,22,KG,48,44.995000000000005
+"Matamoros, Tamps.",Refrescos envasados,101,LT,36,15.0
+"Matamoros, Tamps.",Tortilla de maíz,14,KG,32,24.0
+"Matamoros, Tamps.",Transporte aéreo,232,VIAJE,16,2711.125
+"Mexicali, B.C.",Autobús foráneo,227,BOLETO,4,58.0
+"Mexicali, B.C.",Autobús foráneo,227,VIAJE,16,1622.25
+"Mexicali, B.C.",Carne de res,18,KG,148,199.47500000000002
+"Mexicali, B.C.",Huevo,32,DOCENA,4,40.19
+"Mexicali, B.C.",Huevo,32,KG,4,62.5
+"Mexicali, B.C.",Huevo,32,PAQ,12,93.0
+"Mexicali, B.C.",Jitomate,71,KG,36,31.75
+"Mexicali, B.C.",Leche pasteurizada y fresca,36,LT,28,22.32
+"Mexicali, B.C.",Manzana,50,KG,28,39.7
+"Mexicali, B.C.",Pan blanco,8,PZA,20,4.9
+"Mexicali, B.C.",Pan de caja,9,KG,24,83.58500000000001
+"Mexicali, B.C.",Pollo,22,KG,60,55.0
+"Mexicali, B.C.",Refrescos envasados,101,LT,28,19.875
+"Mexicali, B.C.",Tortilla de maíz,14,KG,28,29.0
+"Mexicali, B.C.",Tortilla de maíz,14,PAQ,4,17.44
+"Mexicali, B.C.",Transporte aéreo,232,VIAJE,16,2726.0
+"Monclova, Coah.",Autobús foráneo,227,VIAJE,16,751.0
+"Monclova, Coah.",Carne de res,18,KG,136,150.575
+"Monclova, Coah.",Huevo,32,DOCENA,4,37.25
+"Monclova, Coah.",Huevo,32,KG,12,51.8
+"Monclova, Coah.",Huevo,32,PAQ,12,80.575
+"Monclova, Coah.",Jitomate,71,KG,36,31.049999999999997
+"Monclova, Coah.",Leche pasteurizada y fresca,36,LT,32,29.22
+"Monclova, Coah.",Manzana,50,KG,24,54.69
+"Monclova, Coah.",Pan blanco,8,PZA,24,2.99
+"Monclova, Coah.",Pan de caja,9,KG,16,83.82
+"Monclova, Coah.",Pollo,22,KG,48,75.0
+"Monclova, Coah.",Refrescos envasados,101,LT,28,27.75
+"Monclova, Coah.",Tortilla de maíz,14,KG,16,20.75
+"Monclova, Coah.",Transporte aéreo,232,VIAJE,16,3768.25
+"Monterrey, N.L.",Autobús foráneo,227,BOLETO,16,504.0
+"Monterrey, N.L.",Autobús foráneo,227,VIAJE,32,669.5
+"Monterrey, N.L.",Carne de res,18,KG,280,144.825
+"Monterrey, N.L.",Huevo,32,KG,16,48.975
+"Monterrey, N.L.",Huevo,32,PAQ,24,82.39
+"Monterrey, N.L.",Jitomate,71,KG,48,29.865
+"Monterrey, N.L.",Leche pasteurizada y fresca,36,LT,40,25.0
+"Monterrey, N.L.",Manzana,50,KG,40,50.614999999999995
+"Monterrey, N.L.",Pan blanco,8,PZA,28,4.65
+"Monterrey, N.L.",Pan de caja,9,KG,24,83.46000000000001
+"Monterrey, N.L.",Pollo,22,KG,136,60.625
+"Monterrey, N.L.",Refrescos envasados,101,LT,48,29.83
+"Monterrey, N.L.",Tortilla de maíz,14,KG,44,23.0
+"Monterrey, N.L.",Transporte aéreo,232,VIAJE,32,1659.375
+"Morelia, Mich.",Autobús foráneo,227,BOLETO,8,330.1
+"Morelia, Mich.",Autobús foráneo,227,VIAJE,16,465.75
+"Morelia, Mich.",Carne de res,18,KG,136,180.0
+"Morelia, Mich.",Huevo,32,KG,20,41.75
+"Morelia, Mich.",Huevo,32,PAQ,4,86.665
+"Morelia, Mich.",Jitomate,71,KG,28,27.425
+"Morelia, Mich.",Leche pasteurizada y fresca,36,LT,36,24.0
+"Morelia, Mich.",Manzana,50,KG,24,52.2
+"Morelia, Mich.",Pan blanco,8,KG,4,44.08
+"Morelia, Mich.",Pan blanco,8,PZA,20,4.5600000000000005
+"Morelia, Mich.",Pan de caja,9,KG,28,112.97
+"Morelia, Mich.",Pollo,22,KG,60,85.0
+"Morelia, Mich.",Refrescos envasados,101,LT,32,24.5
+"Morelia, Mich.",Tortilla de maíz,14,KG,36,21.25
+"Morelia, Mich.",Transporte aéreo,232,VIAJE,16,2456.0
+"Mérida, Yuc.",Autobús foráneo,227,BOLETO,28,160.0
+"Mérida, Yuc.",Carne de res,18,KG,148,165.0
+"Mérida, Yuc.",Huevo,32,KG,24,49.0
+"Mérida, Yuc.",Huevo,32,PAQ,4,38.615
+"Mérida, Yuc.",Jitomate,71,KG,44,25.0
+"Mérida, Yuc.",Leche pasteurizada y fresca,36,LT,24,21.34
+"Mérida, Yuc.",Manzana,50,KG,36,50.95
+"Mérida, Yuc.",Pan blanco,8,PZA,32,7.0
+"Mérida, Yuc.",Pan de caja,9,KG,28,103.44
+"Mérida, Yuc.",Pollo,22,KG,84,52.65
+"Mérida, Yuc.",Refrescos envasados,101,LT,28,24.814999999999998
+"Mérida, Yuc.",Tortilla de maíz,14,KG,64,25.0
+"Mérida, Yuc.",Transporte aéreo,232,VIAJE,16,3023.0
+"Oaxaca, Oax.",Autobús foráneo,227,BOLETO,12,252.5
+"Oaxaca, Oax.",Autobús foráneo,227,VIAJE,16,1034.0
+"Oaxaca, Oax.",Carne de res,18,KG,168,190.0
+"Oaxaca, Oax.",Huevo,32,DOCENA,4,34.005
+"Oaxaca, Oax.",Huevo,32,PAQ,32,79.255
+"Oaxaca, Oax.",Jitomate,71,KG,40,22.625
+"Oaxaca, Oax.",Leche pasteurizada y fresca,36,LT,40,20.31
+"Oaxaca, Oax.",Manzana,50,KG,28,53.025000000000006
+"Oaxaca, Oax.",Pan blanco,8,PZA,28,3.5
+"Oaxaca, Oax.",Pan de caja,9,KG,28,113.97
+"Oaxaca, Oax.",Pollo,22,KG,48,85.0
+"Oaxaca, Oax.",Refrescos envasados,101,LT,44,13.655000000000001
+"Oaxaca, Oax.",Tortilla de maíz,14,KG,44,21.63
+"Oaxaca, Oax.",Transporte aéreo,232,VIAJE,16,1646.99
+"Puebla, Pue.",Autobús foráneo,227,BOLETO,4,12.5
+"Puebla, Pue.",Autobús foráneo,227,VIAJE,28,564.0
+"Puebla, Pue.",Carne de res,18,KG,204,180.0
+"Puebla, Pue.",Huevo,32,KG,28,44.5
+"Puebla, Pue.",Jitomate,71,KG,60,21.25
+"Puebla, Pue.",Leche pasteurizada y fresca,36,LT,36,24.625
+"Puebla, Pue.",Manzana,50,KG,48,45.0
+"Puebla, Pue.",Pan blanco,8,PZA,36,3.0
+"Puebla, Pue.",Pan de caja,9,KG,28,104.44
+"Puebla, Pue.",Pollo,22,KG,96,68.375
+"Puebla, Pue.",Refrescos envasados,101,LT,28,23.33
+"Puebla, Pue.",Tortilla de maíz,14,BOLSA,4,13.0
+"Puebla, Pue.",Tortilla de maíz,14,KG,44,17.25
+"Puebla, Pue.",Transporte aéreo,232,VIAJE,24,4937.875
+"Querétaro, Qro.",Autobús foráneo,227,BOLETO,12,72.0
+"Querétaro, Qro.",Autobús foráneo,227,VIAJE,16,581.0
+"Querétaro, Qro.",Carne de res,18,KG,156,191.01
+"Querétaro, Qro.",Huevo,32,KG,20,41.875
+"Querétaro, Qro.",Jitomate,71,KG,48,20.25
+"Querétaro, Qro.",Leche pasteurizada y fresca,36,LT,20,23.875
+"Querétaro, Qro.",Manzana,50,KG,36,72.0
+"Querétaro, Qro.",Pan blanco,8,PZA,24,3.0
+"Querétaro, Qro.",Pan de caja,9,KG,24,68.57
+"Querétaro, Qro.",Pollo,22,KG,124,76.375
+"Querétaro, Qro.",Refrescos envasados,101,LT,32,26.67
+"Querétaro, Qro.",Tortilla de maíz,14,KG,40,22.125
+"Querétaro, Qro.",Transporte aéreo,232,VIAJE,16,2551.25
+"San Andrés Tuxtla, Ver.",Autobús foráneo,227,BOLETO,8,606.5
+"San Andrés Tuxtla, Ver.",Carne de res,18,KG,68,150.0
+"San Andrés Tuxtla, Ver.",Huevo,32,KG,4,52.5
+"San Andrés Tuxtla, Ver.",Huevo,32,PAQ,16,58.875
+"San Andrés Tuxtla, Ver.",Jitomate,71,KG,12,21.955
+"San Andrés Tuxtla, Ver.",Leche pasteurizada y fresca,36,LT,20,23.605
+"San Andrés Tuxtla, Ver.",Manzana,50,KG,16,67.475
+"San Andrés Tuxtla, Ver.",Pan blanco,8,PZA,16,3.0
+"San Andrés Tuxtla, Ver.",Pan de caja,9,KG,20,94.44
+"San Andrés Tuxtla, Ver.",Pollo,22,KG,24,53.75
+"San Andrés Tuxtla, Ver.",Refrescos envasados,101,LT,20,26.67
+"San Andrés Tuxtla, Ver.",Tortilla de maíz,14,KG,40,19.875
+"San Andrés Tuxtla, Ver.",Transporte aéreo,232,VIAJE,8,2884.5
+"San Luis Potosí, S.L.P.",Autobús foráneo,227,BOLETO,24,821.5
+"San Luis Potosí, S.L.P.",Carne de res,18,KG,176,180.0
+"San Luis Potosí, S.L.P.",Huevo,32,KG,24,44.0
+"San Luis Potosí, S.L.P.",Huevo,32,PAQ,8,79.9
+"San Luis Potosí, S.L.P.",Jitomate,71,KG,56,25.0
+"San Luis Potosí, S.L.P.",Leche pasteurizada y fresca,36,LT,48,22.375
+"San Luis Potosí, S.L.P.",Manzana,50,KG,44,55.07
+"San Luis Potosí, S.L.P.",Pan blanco,8,PZA,28,4.0
+"San Luis Potosí, S.L.P.",Pan de caja,9,KG,32,99.22
+"San Luis Potosí, S.L.P.",Pollo,22,KG,76,67.0
+"San Luis Potosí, S.L.P.",Refrescos envasados,101,LT,48,23.59
+"San Luis Potosí, S.L.P.",Tortilla de maíz,14,KG,48,19.0
+"San Luis Potosí, S.L.P.",Tortilla de maíz,14,PAQ,4,21.28
+"San Luis Potosí, S.L.P.",Transporte aéreo,232,VIAJE,16,2688.0
+"Tampico, Tamps.",Autobús foráneo,227,BOLETO,20,645.25
+"Tampico, Tamps.",Autobús foráneo,227,VIAJE,12,999.0
+"Tampico, Tamps.",Carne de res,18,KG,200,176.25
+"Tampico, Tamps.",Huevo,32,DOCENA,4,60.0
+"Tampico, Tamps.",Huevo,32,PAQ,12,82.065
+"Tampico, Tamps.",Jitomate,71,KG,20,26.2
+"Tampico, Tamps.",Leche pasteurizada y fresca,36,LT,20,24.634999999999998
+"Tampico, Tamps.",Manzana,50,KG,20,47.95
+"Tampico, Tamps.",Pan blanco,8,PZA,20,4.5
+"Tampico, Tamps.",Pan de caja,9,KG,20,100.61
+"Tampico, Tamps.",Pollo,22,KG,72,84.5
+"Tampico, Tamps.",Refrescos envasados,101,LT,20,30.0
+"Tampico, Tamps.",Tortilla de maíz,14,KG,24,27.0
+"Tampico, Tamps.",Transporte aéreo,232,VIAJE,16,2344.175
+"Tapachula, Chis.",Autobús foráneo,227,BOLETO,20,502.25
+"Tapachula, Chis.",Carne de res,18,KG,136,160.0
+"Tapachula, Chis.",Huevo,32,DOCENA,8,32.25
+"Tapachula, Chis.",Huevo,32,PAQ,20,77.5
+"Tapachula, Chis.",Jitomate,71,KG,32,23.125
+"Tapachula, Chis.",Leche pasteurizada y fresca,36,LT,24,23.375
+"Tapachula, Chis.",Manzana,50,KG,28,65.0
+"Tapachula, Chis.",Pan blanco,8,PZA,20,3.5
+"Tapachula, Chis.",Pan de caja,9,KG,16,68.28999999999999
+"Tapachula, Chis.",Pollo,22,KG,32,68.0
+"Tapachula, Chis.",Pollo,22,PZA,28,180.0
+"Tapachula, Chis.",Refrescos envasados,101,LT,16,26.67
+"Tapachula, Chis.",Tortilla de maíz,14,KG,16,22.0
+"Tapachula, Chis.",Transporte aéreo,232,VIAJE,16,1831.125
+"Tehuantepec, Oax.",Autobús foráneo,227,VIAJE,8,875.0
+"Tehuantepec, Oax.",Carne de res,18,KG,68,168.0
+"Tehuantepec, Oax.",Huevo,32,PAQ,12,83.0
+"Tehuantepec, Oax.",Jitomate,71,KG,20,23.814999999999998
+"Tehuantepec, Oax.",Leche pasteurizada y fresca,36,LT,16,23.25
+"Tehuantepec, Oax.",Manzana,50,KG,12,77.44
+"Tehuantepec, Oax.",Pan blanco,8,PZA,16,3.25
+"Tehuantepec, Oax.",Pan de caja,9,KG,20,113.97
+"Tehuantepec, Oax.",Pollo,22,KG,44,81.5
+"Tehuantepec, Oax.",Refrescos envasados,101,LT,20,22.0
+"Tehuantepec, Oax.",Tortilla de maíz,14,KG,20,20.0
+"Tehuantepec, Oax.",Transporte aéreo,232,VIAJE,8,2035.935
+"Tepatitlán, Jal.",Autobús foráneo,227,VIAJE,8,564.5
+"Tepatitlán, Jal.",Carne de res,18,KG,68,165.0
+"Tepatitlán, Jal.",Huevo,32,KG,12,42.75
+"Tepatitlán, Jal.",Huevo,32,PAQ,4,42.849999999999994
+"Tepatitlán, Jal.",Jitomate,71,KG,12,22.625
+"Tepatitlán, Jal.",Leche pasteurizada y fresca,36,LT,32,20.94
+"Tepatitlán, Jal.",Manzana,50,KG,20,41.9
+"Tepatitlán, Jal.",Pan blanco,8,PZA,12,8.065000000000001
+"Tepatitlán, Jal.",Pan de caja,9,KG,24,81.97
+"Tepatitlán, Jal.",Pollo,22,KG,24,83.375
+"Tepatitlán, Jal.",Refrescos envasados,101,LT,24,21.665
+"Tepatitlán, Jal.",Tortilla de maíz,14,KG,44,24.0
+"Tepatitlán, Jal.",Transporte aéreo,232,VIAJE,8,839.75
+"Tepic, Nay.",Autobús foráneo,227,BOLETO,20,180.0
+"Tepic, Nay.",Autobús foráneo,227,VIAJE,4,345.0
+"Tepic, Nay.",Carne de res,18,KG,188,170.0
+"Tepic, Nay.",Huevo,32,DOCENA,4,27.85
+"Tepic, Nay.",Huevo,32,KG,32,39.875
+"Tepic, Nay.",Huevo,32,PAQ,4,59.32
+"Tepic, Nay.",Jitomate,71,KG,64,22.875
+"Tepic, Nay.",Leche pasteurizada y fresca,36,LT,36,20.11
+"Tepic, Nay.",Manzana,50,KG,36,55.0
+"Tepic, Nay.",Pan blanco,8,PZA,24,5.0
+"Tepic, Nay.",Pan de caja,9,KG,32,103.7
+"Tepic, Nay.",Pollo,22,KG,92,71.375
+"Tepic, Nay.",Refrescos envasados,101,LT,40,17.375
+"Tepic, Nay.",Tortilla de maíz,14,KG,44,24.625
+"Tepic, Nay.",Tortilla de maíz,14,PAQ,4,26.0
+"Tepic, Nay.",Transporte aéreo,232,VIAJE,16,3532.0
+"Tijuana, B.C.",Autobús foráneo,227,BOLETO,4,225.0
+"Tijuana, B.C.",Autobús foráneo,227,VIAJE,16,1207.5
+"Tijuana, B.C.",Carne de res,18,KG,156,190.75
+"Tijuana, B.C.",Huevo,32,DOCENA,4,41.59
+"Tijuana, B.C.",Huevo,32,KG,4,45.7
+"Tijuana, B.C.",Huevo,32,PAQ,12,99.25
+"Tijuana, B.C.",Jitomate,71,KG,20,35.025
+"Tijuana, B.C.",Leche pasteurizada y fresca,36,LT,28,26.0
+"Tijuana, B.C.",Manzana,50,KG,20,46.63
+"Tijuana, B.C.",Pan blanco,8,PZA,20,4.0
+"Tijuana, B.C.",Pan de caja,9,KG,24,76.08000000000001
+"Tijuana, B.C.",Pollo,22,KG,64,62.95
+"Tijuana, B.C.",Refrescos envasados,101,LT,24,26.67
+"Tijuana, B.C.",Tortilla de maíz,14,KG,20,25.0
+"Tijuana, B.C.",Transporte aéreo,232,VIAJE,16,2361.625
+"Tlaxcala, Tlax.",Autobús foráneo,227,BOLETO,12,21.0
+"Tlaxcala, Tlax.",Autobús foráneo,227,VIAJE,8,106.5
+"Tlaxcala, Tlax.",Carne de res,18,KG,136,175.0
+"Tlaxcala, Tlax.",Huevo,32,DOCENA,4,34.5
+"Tlaxcala, Tlax.",Huevo,32,KG,20,41.0
+"Tlaxcala, Tlax.",Jitomate,71,KG,52,18.5
+"Tlaxcala, Tlax.",Leche pasteurizada y fresca,36,LT,28,17.439999999999998
+"Tlaxcala, Tlax.",Manzana,50,KG,40,47.9
+"Tlaxcala, Tlax.",Pan blanco,8,PZA,32,3.25
+"Tlaxcala, Tlax.",Pan de caja,9,KG,32,97.0
+"Tlaxcala, Tlax.",Pollo,22,KG,60,68.125
+"Tlaxcala, Tlax.",Refrescos envasados,101,LT,36,26.67
+"Tlaxcala, Tlax.",Tortilla de maíz,14,KG,44,17.0
+"Tlaxcala, Tlax.",Transporte aéreo,232,VIAJE,8,3066.625
+"Toluca, Edo. de Méx.",Autobús foráneo,227,BOLETO,4,89.0
+"Toluca, Edo. de Méx.",Autobús foráneo,227,VIAJE,16,197.5
+"Toluca, Edo. de Méx.",Carne de res,18,KG,148,210.0
+"Toluca, Edo. de Méx.",Huevo,32,KG,12,49.0
+"Toluca, Edo. de Méx.",Huevo,32,PAQ,12,55.125
+"Toluca, Edo. de Méx.",Jitomate,71,KG,36,21.75
+"Toluca, Edo. de Méx.",Leche pasteurizada y fresca,36,LT,24,27.0
+"Toluca, Edo. de Méx.",Manzana,50,KG,28,51.25
+"Toluca, Edo. de Méx.",Pan blanco,8,PZA,20,3.0
+"Toluca, Edo. de Méx.",Pan de caja,9,KG,24,108.10499999999999
+"Toluca, Edo. de Méx.",Pollo,22,KG,72,70.0
+"Toluca, Edo. de Méx.",Refrescos envasados,101,LT,28,21.67
+"Toluca, Edo. de Méx.",Tortilla de maíz,14,KG,40,19.0
+"Toluca, Edo. de Méx.",Transporte aéreo,232,VIAJE,16,1406.9099999999999
+"Torreón, Coah.",Autobús foráneo,227,BOLETO,12,102.0
+"Torreón, Coah.",Autobús foráneo,227,VIAJE,16,966.19
+"Torreón, Coah.",Carne de res,18,KG,208,144.9
+"Torreón, Coah.",Huevo,32,DOCENA,4,38.93
+"Torreón, Coah.",Huevo,32,KG,12,40.375
+"Torreón, Coah.",Huevo,32,PAQ,4,71.0
+"Torreón, Coah.",Jitomate,71,KG,28,26.265
+"Torreón, Coah.",Leche pasteurizada y fresca,36,LT,16,25.525
+"Torreón, Coah.",Manzana,50,KG,20,42.325
+"Torreón, Coah.",Pan blanco,8,PZA,16,9.0
+"Torreón, Coah.",Pan de caja,9,KG,20,91.49000000000001
+"Torreón, Coah.",Pollo,22,KG,100,49.075
+"Torreón, Coah.",Refrescos envasados,101,LT,32,22.25
+"Torreón, Coah.",Tortilla de maíz,14,KG,28,22.0
+"Torreón, Coah.",Transporte aéreo,232,VIAJE,16,3800.625
+"Tulancingo, Hgo.",Autobús foráneo,227,VIAJE,8,106.5
+"Tulancingo, Hgo.",Carne de res,18,KG,68,160.0
+"Tulancingo, Hgo.",Huevo,32,KG,12,43.125
+"Tulancingo, Hgo.",Huevo,32,PAQ,4,51.63
+"Tulancingo, Hgo.",Jitomate,71,KG,12,16.25
+"Tulancingo, Hgo.",Leche pasteurizada y fresca,36,LT,24,22.71
+"Tulancingo, Hgo.",Manzana,50,KG,20,38.875
+"Tulancingo, Hgo.",Pan blanco,8,PZA,20,3.19
+"Tulancingo, Hgo.",Pan de caja,9,KG,16,105.115
+"Tulancingo, Hgo.",Pollo,22,KG,52,65.0
+"Tulancingo, Hgo.",Refrescos envasados,101,LT,24,24.165
+"Tulancingo, Hgo.",Tortilla de maíz,14,KG,28,20.0
+"Tulancingo, Hgo.",Transporte aéreo,232,VIAJE,8,2036.405
+"Veracruz, Ver.",Autobús foráneo,227,BOLETO,16,168.5
+"Veracruz, Ver.",Carne de res,18,KG,148,174.0
+"Veracruz, Ver.",Huevo,32,DOCENA,8,38.25
+"Veracruz, Ver.",Huevo,32,KG,5,55.0
+"Veracruz, Ver.",Huevo,32,PAQ,11,54.0
+"Veracruz, Ver.",Jitomate,71,KG,36,21.625
+"Veracruz, Ver.",Leche pasteurizada y fresca,36,LT,20,28.0
+"Veracruz, Ver.",Manzana,50,KG,32,56.25
+"Veracruz, Ver.",Pan blanco,8,PZA,28,2.625
+"Veracruz, Ver.",Pan de caja,9,KG,20,108.09
+"Veracruz, Ver.",Pollo,22,KG,48,64.625
+"Veracruz, Ver.",Pollo,22,PZA,8,9.94
+"Veracruz, Ver.",Refrescos envasados,101,LT,36,14.0
+"Veracruz, Ver.",Tortilla de maíz,14,KG,24,22.75
+"Veracruz, Ver.",Transporte aéreo,232,VIAJE,16,5019.65
+"Villahermosa, Tab.",Autobús foráneo,227,BOLETO,4,55.0
+"Villahermosa, Tab.",Autobús foráneo,227,VIAJE,16,610.0
+"Villahermosa, Tab.",Carne de res,18,KG,156,165.0
+"Villahermosa, Tab.",Huevo,32,DOCENA,4,37.05
+"Villahermosa, Tab.",Huevo,32,PAQ,20,75.0
+"Villahermosa, Tab.",Jitomate,71,KG,48,21.375
+"Villahermosa, Tab.",Leche pasteurizada y fresca,36,LT,28,26.0
+"Villahermosa, Tab.",Manzana,50,KG,36,52.489999999999995
+"Villahermosa, Tab.",Pan blanco,8,PZA,24,2.25
+"Villahermosa, Tab.",Pan de caja,9,KG,28,100.08
+"Villahermosa, Tab.",Pollo,22,KG,76,75.0
+"Villahermosa, Tab.",Pollo,22,PZA,4,161.25
+"Villahermosa, Tab.",Refrescos envasados,101,LT,36,23.33
+"Villahermosa, Tab.",Tortilla de maíz,14,KG,44,21.0
+"Villahermosa, Tab.",Transporte aéreo,232,VIAJE,16,2195.875
+Área Met. de la Cd. de México,Autobús foráneo,227,BOLETO,84,887.5
+Área Met. de la Cd. de México,Carne de res,18,KG,748,188.0
+Área Met. de la Cd. de México,Huevo,32,DOCENA,4,36.815
+Área Met. de la Cd. de México,Huevo,32,KG,32,44.5
+Área Met. de la Cd. de México,Huevo,32,PAQ,20,55.68
+Área Met. de la Cd. de México,Jitomate,71,KG,112,27.0
+Área Met. de la Cd. de México,Leche pasteurizada y fresca,36,LT,88,25.0
+Área Met. de la Cd. de México,Manzana,50,KG,76,60.0
+Área Met. de la Cd. de México,Pan blanco,8,PZA,68,2.5
+Área Met. de la Cd. de México,Pan de caja,9,KG,72,66.15
+Área Met. de la Cd. de México,Pollo,22,KG,388,65.5
+Área Met. de la Cd. de México,Refrescos envasados,101,LT,72,19.09
+Área Met. de la Cd. de México,Tortilla de maíz,14,KG,116,20.0
+Área Met. de la Cd. de México,Transporte aéreo,232,VIAJE,80,2197.875

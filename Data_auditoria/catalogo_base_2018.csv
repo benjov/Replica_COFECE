@@ -1,0 +1,300 @@
+clave,generico,unidad,cantidad
+1,Arroz,KG,1
+2,Botanas elaboradas con cereales,KG,1
+3,Cereales en hojuelas,KG,1
+4,Galletas,KG,1
+5,Harinas de trigo,KG,1
+6,Maíz,KG,1
+7,Masa y harinas de maíz,KG,1
+8,Pan blanco,PZA,1
+9,Pan de caja,KG,1
+10,Pan dulce,PZA,1
+11,Pasta para sopa,KG,1
+12,"Pasteles, pastelillos y pan dulce empaquetado",KG,1
+13,Pastelillos y pasteles a granel,PZA,1
+14,Tortilla de maíz,KG,1
+15,Tortillas de harina de trigo,KG,1
+16,Tostadas,KG,1
+17,Carne de cerdo,KG,1
+18,Carne de res,KG,1
+19,"Carnes secas, procesadas y otros embutidos",KG,1
+20,Chorizo,KG,1
+21,Jamón,KG,1
+22,Pollo,KG,1
+23,Salchichas,KG,1
+24,Tocino,KG,1
+25,Vísceras de res,KG,1
+26,Atún y sardina en lata,KG,1
+27,Camarón,KG,1
+28,Otros mariscos,KG,1
+29,Otros pescados y mariscos en conserva,KG,1
+30,Pescado,KG,1
+31,Crema y otros productos a base de leche,LT,1
+32,Huevo,KG,1
+33,Leche de soya,LT,1
+34,Leche en polvo,KG,1
+35,"Leche evaporada, condensada y maternizada",KG,1
+36,Leche pasteurizada y fresca,LT,1
+37,Otros quesos,KG,1
+38,Queso amarillo,KG,1
+39,Queso fresco,KG,1
+40,Queso manchego y Chihuahua,KG,1
+41,Queso Oaxaca y asadero,KG,1
+42,Yogurt,KG,1
+43,Aceites y grasas vegetales comestibles,LT,1
+44,Manteca de cerdo,KG,1
+45,Mantequilla,KG,1
+46,Aguacate,KG,1
+47,Durazno,KG,1
+48,Guayaba,KG,1
+49,Limón,KG,1
+50,Manzana,KG,1
+51,Melón,PZA,1
+52,Naranja,KG,1
+53,Otras conservas de frutas,KG,1
+54,Otras frutas,KG,1
+55,Papaya,KG,1
+56,Pera,KG,1
+57,Piña,PZA,1
+58,Plátanos,KG,1
+59,Sandía,KG,1
+60,Uva,KG,1
+61,Calabacita,KG,1
+62,Cebolla,KG,1
+63,Chayote,KG,1
+64,Chile poblano,KG,1
+65,Chile seco,KG,1
+66,Chile serrano,KG,1
+67,Chiles envasados,KG,1
+68,Ejotes,KG,1
+69,Frijol,KG,1
+70,Frijol procesado,KG,1
+71,Jitomate,KG,1
+72,Lechuga y col,PZA,1
+73,Nopales,PZA,1
+74,Otras legumbres secas,KG,1
+75,Otras verduras y legumbres,PZA,1
+76,Otros chiles frescos,KG,1
+77,Papa y otros tubérculos,KG,1
+78,Papas fritas,KG,1
+79,Pepino,KG,1
+80,Tomate verde,KG,1
+81,Verduras envasadas,KG,1
+82,Zanahoria,KG,1
+83,Azúcar,KG,1
+84,Chocolate y productos de confitería,KG,1
+85,"Gelatina, miel y mermeladas",KG,1
+86,"Helados, nieves y paletas de hielo",LT,1
+87,Alimentos para bebé,KG,1
+88,Concentrados de pollo y sal,KG,1
+89,Gelatina en polvo,KG,1
+90,Mayonesa y mostaza,KG,1
+91,Moles y salsas,LT,1
+92,Otros condimentos,LT,1
+93,Sopas instantáneas y puré de tomate,KG,1
+94,Café soluble,KG,1
+95,Café tostado,KG,1
+96,Chocolate líquido y para preparar bebida,KG,1
+97,Té,KG,1
+98,Agua embotellada,LT,1
+99,Concentrados para refrescos,SOBRE,1
+100,Jugos o néctares envasados,LT,1
+101,Refrescos envasados,LT,1
+102,Brandy,LT,1
+103,Otros licores,LT,1
+104,Ron,LT,1
+105,Tequila,LT,1
+106,Vino de mesa,LT,1
+107,Cerveza,LT,1
+108,Cigarrillos,CAJETI,1
+109,Blusas y playeras para mujer,PZA,1
+110,"Calcetas, medias y pantimedias",PAQ,1
+111,Calcetines y calcetas para hombre,PAR,1
+112,Calcetines y calcetas para niños,PAR,1
+113,Camisas y playeras para hombre,PZA,1
+114,Camisas y playeras para niños,PAQ,1
+115,Camisetas para bebés,PZA,1
+116,Otras prendas de vestir para hombre,JGO,1
+117,Otras prendas de vestir para mujer,PZA,1
+118,Pantalones para hombre,PZA,1
+119,Pantalones para mujer,PZA,1
+120,Pantalones para niño,PZA,1
+121,Ropa de abrigo,PZA,1
+122,Ropa interior para hombre,PAQ,1
+123,Ropa interior para infantes,PZA,1
+124,Ropa interior para mujer,PZA,1
+125,Ropa para bebés,PZA,1
+126,Traje para hombre,PZA,1
+127,Uniformes escolares,JGO,1
+128,Vestidos y faldas para mujer,PZA,1
+129,"Vestidos, faldas y pantalones para niñas",PZA,1
+130,Servicio de lavandería,SERV,1
+131,Servicio de tintorería,SERV,1
+132,Zapatos de material sintético,PAR,1
+133,Zapatos para hombre,PAR,1
+134,Zapatos para mujer,PAR,1
+135,Zapatos para niños y niñas,PAR,1
+136,Zapatos tenis,PAR,1
+137,Servicios y artículos para el calzado,PZA,1
+138,Renta de vivienda,INDICE,1
+139,Vivienda propia,INDICE,1
+140,Productos para reparación menor de la vivienda,PZA,1
+141,Derechos por el suministro de agua,CUOTA,1
+142,Otros servicios para el hogar,SERV,1
+143,Electricidad,COST/M,1
+144,Gas doméstico LP,KG,1
+145,Gas doméstico natural,COSTO/,1
+146,Colchones,UNIDAD,1
+147,Comedores y antecomedores,JGO,1
+148,Lámparas,PZA,1
+149,Muebles diversos para el hogar,PZA,1
+150,Muebles para cocina,PZA,1
+151,Recámaras,JGO,1
+152,Salas,JGO,1
+153,Alfombras y otros materiales para pisos,MT2,1
+154,Blancos y otros textiles para el hogar,PZA,1
+155,Colchas y cobijas,JGO,1
+156,Cortinas,MT,1
+157,Sábanas,JGO,1
+158,Toallas,PZA,1
+159,Aparatos de aire acondicionado,UNIDAD,1
+160,Aspiradoras y otros aparatos para el hogar,UNIDAD,1
+161,Estufas,UNIDAD,1
+162,Horno de microondas,UNIDAD,1
+163,Lavadoras de ropa,UNIDAD,1
+164,Refrigeradores,UNIDAD,1
+165,"Cafeteras, tostadoras, ventiladores y otros electrodomésticos pequeños",UNIDAD,1
+166,Licuadoras,UNIDAD,1
+167,Planchas eléctricas,UNIDAD,1
+168,Artículos y utensilios para el hogar,PZA,1
+169,Baterías de cocina,JGO,1
+170,"Loza, cristalería y cubiertos",PZA,1
+171,Objetos ornamentales y decorativos,PZA,1
+172,Utensilios de plástico para el hogar,PZA,1
+173,Herramientas y equipo grande para el hogar,PZA,1
+174,Focos,PZA,1
+175,Herramientas pequeñas y accesorios diversos,CAJA,1
+176,Pilas,PAQ,1
+177,Artículos desechables y no duraderos,PZA,1
+178,Blanqueadores,LT,1
+179,Cerillos,PAQ,1
+180,Desodorantes ambientales,PAQ,1
+181,Detergentes,KG,1
+182,"Escobas, fibras y estropajos",PZA,1
+183,Jabón para lavar,KG,1
+184,Plaguicidas,PZA,1
+185,Servilletas de papel,PAQ,1
+186,Suavizantes y limpiadores,LT,1
+187,Velas y veladoras,PAQ,1
+188,Servicio doméstico,SERV,1
+189,Analgésicos,CAJA,1
+190,Antibióticos,CAJA,1
+191,Antigripales,CAJA,1
+192,Antiinflamatorios,CAJA,1
+193,Cardiovasculares,CAJA,1
+194,Dermatológicos,TUBO,1
+195,Expectorantes y descongestivos,CAJA,1
+196,Gastrointestinales,CAJA,1
+197,Medicamentos para alergias,FCO,1
+198,Medicamentos para diabetes,CAJA,1
+199,Medicinas homeopáticas y naturistas,FCO,1
+200,Nutricionales,CAJA,1
+201,Otros medicamentos,TUBO,1
+202,Material de curación,CAJA,1
+203,"Lentes, aparatos para sordera y ortopédicos",PAR,1
+204,Consulta médica,SERV,1
+205,Consulta y prótesis dental,SERV,1
+206,Análisis clínicos,SERV,1
+207,Atención médica durante el parto,SERV,1
+208,Hospitalización general,SERV,1
+209,Hospitalización parto,SERV,1
+210,Operación quirúrgica,SERV,1
+211,Automóviles,UNIDAD,1
+212,Motocicletas,UNIDAD,1
+213,Bicicletas,UNIDAD,1
+214,Acumuladores,PZA,1
+215,Neumáticos,PZA,1
+216,"Partes, accesorios y otras refacciones para vehículos",PZA,1
+217,Aceites lubricantes,LT,1
+218,Gasolina de alto octanaje,INDICE,1
+219,Gasolina de bajo octanaje,INDICE,1
+220,Lavado y engrasado de automóvil,SERV,1
+221,Mantenimiento de automóvil,SERV,1
+222,Reparación de automóvil,SERV,1
+223,Cuotas de autopistas,CUOTA,1
+224,Estacionamiento,CUOTA,1
+225,Trámites vehiculares,CUOTA,1
+226,Metro o transporte eléctrico,VIAJE,1
+227,Autobús foráneo,BOLETO,1
+228,Autobús urbano,VIAJE,1
+229,Colectivo,VIAJE,1
+230,Taxi,VIAJE,1
+231,Transporte escolar,SERV,1
+232,Transporte aéreo,VIAJE,1
+233,Paquetería,SERV,1
+234,Equipo terminal de comunicación,INDICE,1
+235,"Paquetes de internet, telefonía y televisión de paga",INDICE,1
+236,Servicio de internet,HORA,1
+237,Servicio de telefonía móvil,INDICE,1
+238,Servicios de telefonía fija,INDICE,1
+239,Equipos y reproductores de audio,UNIDAD,1
+240,Reproductores de video,UNIDAD,1
+241,Televisores,UNIDAD,1
+242,Material y aparatos fotográficos,SERV,1
+243,Computadoras,INDICE,1
+244,Películas y música,PZA,1
+245,Instrumentos musicales,PZA,1
+246,"Juegos electrónicos; consola, cartuchos y discos para videojuegos",PZA,1
+247,Juguetes y juegos de mesa,JGO,1
+248,Artículos deportivos,PZA,1
+249,Plantas y flores,MANOJO,1
+250,Alimento para mascotas,KG,1
+251,Servicios para mascotas,SERV,1
+252,Club deportivo,CUOTA,1
+253,Cine,BOLETO,1
+254,"Otros servicios culturales, diversiones y espectáculos deportivos",HORA,1
+255,Servicio de televisión de paga,SERV,1
+256,Libros de texto,EJEMPL,1
+257,Otros libros,EJEMPL,1
+258,Periódicos,EJEMPL,1
+259,Revistas,EJEMPL,1
+260,Material escolar,PZA,1
+261,Servicios turísticos en paquete,PAQ,1
+262,Preescolar,COST/M,1
+263,Primaria,COST/M,1
+264,Secundaria,COST/M,1
+265,Preparatoria,COST/M,1
+266,Universidad,COST/M,1
+267,Carrera corta,COST/M,1
+268,Enseñanza adicional,COST/A,1
+269,Barbacoa o birria,ORDEN,1
+270,Carnitas,KG,1
+271,Centro nocturno,SERV,1
+272,"Loncherías, fondas, torterías y taquerías",ORDEN,1
+273,Otros alimentos cocinados,KG,1
+274,Pizzas,PZA,1
+275,Pollos rostizados,PZA,1
+276,Restaurantes y similares,SERV,1
+277,Hoteles,TARI/D,1
+278,Corte de cabello,SERV,1
+279,Sala de belleza y masajes,SERV,1
+280,Aparatos eléctricos para el cuidado personal,PZA,1
+281,Navajas y máquinas de afeitar,PAQ,1
+282,Artículos de maquillaje,PZA,1
+283,Crema y productos para higiene dental,PZA,1
+284,Cremas para la piel,LT,1
+285,Desodorantes personales,PZA,1
+286,Jabón de tocador,LT,1
+287,Lociones y perfumes,PZA,1
+288,Otros artículos de tocador,PZA,1
+289,Pañales,PAQ,1
+290,Papel higiénico y pañuelos desechables,PAQ,1
+291,Productos para el cabello,LT,1
+292,Toallas sanitarias,PAQ,1
+293,"Relojes, joyas y bisutería",PZA,1
+294,"Bolsas, maletas y cinturones",PZA,1
+295,Guarderías y estancias infantiles,COST/M,1
+296,Seguro de automóvil,INDICE,1
+297,Expedición de documentos del sector público,CUOTA,1
+298,Servicios funerarios,SERV,1
+299,Servicios profesionales,SERV,1

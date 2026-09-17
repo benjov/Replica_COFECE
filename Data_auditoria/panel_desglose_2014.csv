@@ -1,0 +1,118 @@
+ciudad,generico,unidad,tipo,n,precio_mediano
+"Acapulco, Gro.",Refrescos envasados,LT,otro,40,13.75
+"Acapulco, Gro.",Transporte aéreo,VIAJE,nacional,16,1447.81
+"Aguascalientes, Ags.",Refrescos envasados,LT,otro,40,12.0
+"Aguascalientes, Ags.",Transporte aéreo,VIAJE,nacional,16,1697.92
+"Campeche, Camp.",Refrescos envasados,LT,otro,40,13.0
+"Campeche, Camp.",Transporte aéreo,VIAJE,nacional,16,2136.5
+"Cd. Acuña, Coah.",Refrescos envasados,LT,otro,20,10.06
+"Cd. Acuña, Coah.",Transporte aéreo,VIAJE,nacional,8,2781.625
+"Cd. Juárez, Chih.",Refrescos envasados,LT,lata,8,24.615000000000002
+"Cd. Juárez, Chih.",Refrescos envasados,LT,otro,32,9.875
+"Cd. Juárez, Chih.",Transporte aéreo,VIAJE,nacional,16,2030.25
+"Chetumal, Q. Roo.",Refrescos envasados,LT,otro,20,11.969999999999999
+"Chetumal, Q. Roo.",Transporte aéreo,VIAJE,nacional,8,5793.485
+"Chihuahua, Chih.",Refrescos envasados,LT,lata,2,23.94
+"Chihuahua, Chih.",Refrescos envasados,LT,otro,38,11.5
+"Chihuahua, Chih.",Transporte aéreo,VIAJE,nacional,16,2115.5
+"Colima, Col.",Refrescos envasados,LT,otro,40,15.0
+"Colima, Col.",Transporte aéreo,VIAJE,nacional,16,2062.75
+"Cortazar, Gto.",Refrescos envasados,LT,otro,20,11.0
+"Cortazar, Gto.",Transporte aéreo,VIAJE,nacional,8,2949.875
+"Cuernavaca, Mor.",Refrescos envasados,LT,otro,40,9.21
+"Cuernavaca, Mor.",Transporte aéreo,VIAJE,nacional,16,1806.625
+"Culiacán, Sin.",Refrescos envasados,LT,otro,40,16.25
+"Culiacán, Sin.",Transporte aéreo,VIAJE,nacional,16,1736.5
+"Córdoba, Ver.",Refrescos envasados,LT,otro,40,13.83
+"Córdoba, Ver.",Transporte aéreo,VIAJE,nacional,16,1555.925
+"Durango, Dgo.",Refrescos envasados,LT,otro,40,11.0
+"Durango, Dgo.",Transporte aéreo,VIAJE,internacional,4,10816.795
+"Durango, Dgo.",Transporte aéreo,VIAJE,nacional,12,2406.0
+"Fresnillo, Zac.",Refrescos envasados,LT,otro,20,10.565000000000001
+"Fresnillo, Zac.",Transporte aéreo,VIAJE,internacional,4,6927.625
+"Fresnillo, Zac.",Transporte aéreo,VIAJE,nacional,4,2762.25
+"Guadalajara, Jal.",Refrescos envasados,LT,otro,60,13.33
+"Guadalajara, Jal.",Transporte aéreo,VIAJE,internacional,4,5628.41
+"Guadalajara, Jal.",Transporte aéreo,VIAJE,nacional,20,1408.625
+"Hermosillo, Son.",Refrescos envasados,LT,otro,40,11.5
+"Hermosillo, Son.",Transporte aéreo,VIAJE,nacional,16,1920.115
+"Huatabampo, Son.",Refrescos envasados,LT,otro,20,15.0
+"Huatabampo, Son.",Transporte aéreo,VIAJE,nacional,8,2646.0
+"Iguala, Gro.",Refrescos envasados,LT,lata,4,19.98
+"Iguala, Gro.",Refrescos envasados,LT,otro,16,10.5
+"Iguala, Gro.",Transporte aéreo,VIAJE,nacional,8,1141.57
+"Jacona, Mich.",Refrescos envasados,LT,otro,20,8.45
+"Jacona, Mich.",Transporte aéreo,VIAJE,nacional,8,1956.0
+"Jiménez, Chih.",Refrescos envasados,LT,otro,20,13.33
+"Jiménez, Chih.",Transporte aéreo,VIAJE,nacional,8,1971.75
+"La Paz, B.C.S.",Refrescos envasados,LT,lata,12,23.27
+"La Paz, B.C.S.",Refrescos envasados,LT,otro,28,18.14
+"La Paz, B.C.S.",Transporte aéreo,VIAJE,nacional,16,2093.75
+"León, Gto.",Refrescos envasados,LT,lata,4,22.54
+"León, Gto.",Refrescos envasados,LT,otro,36,12.5
+"León, Gto.",Transporte aéreo,VIAJE,nacional,16,2053.25
+"Matamoros, Tamps.",Refrescos envasados,LT,lata,4,21.41
+"Matamoros, Tamps.",Refrescos envasados,LT,otro,36,11.059999999999999
+"Matamoros, Tamps.",Transporte aéreo,VIAJE,nacional,16,2108.375
+"Mexicali, B.C.",Refrescos envasados,LT,lata,4,20.66
+"Mexicali, B.C.",Refrescos envasados,LT,otro,36,15.0
+"Mexicali, B.C.",Transporte aéreo,VIAJE,nacional,16,2361.625
+"Monclova, Coah.",Refrescos envasados,LT,otro,40,15.54
+"Monclova, Coah.",Transporte aéreo,VIAJE,nacional,16,2235.0
+"Monterrey, N.L.",Refrescos envasados,LT,lata,4,85.11
+"Monterrey, N.L.",Refrescos envasados,LT,otro,76,15.0
+"Monterrey, N.L.",Transporte aéreo,VIAJE,internacional,8,7195.875
+"Monterrey, N.L.",Transporte aéreo,VIAJE,nacional,24,1954.5900000000001
+"Morelia, Mich.",Refrescos envasados,LT,lata,4,27.43
+"Morelia, Mich.",Refrescos envasados,LT,otro,36,10.67
+"Morelia, Mich.",Transporte aéreo,VIAJE,nacional,16,2846.0
+"Mérida, Yuc.",Refrescos envasados,LT,otro,40,11.835
+"Mérida, Yuc.",Transporte aéreo,VIAJE,nacional,16,1699.995
+"Oaxaca, Oax.",Refrescos envasados,LT,lata,4,21.835
+"Oaxaca, Oax.",Refrescos envasados,LT,otro,36,8.0
+"Oaxaca, Oax.",Transporte aéreo,VIAJE,nacional,16,1307.955
+"Puebla, Pue.",Refrescos envasados,LT,otro,60,13.7
+"Puebla, Pue.",Transporte aéreo,VIAJE,internacional,4,6576.25
+"Puebla, Pue.",Transporte aéreo,VIAJE,nacional,20,2136.375
+"Querétaro, Qro.",Refrescos envasados,LT,lata,4,14.08
+"Querétaro, Qro.",Refrescos envasados,LT,otro,36,15.0
+"Querétaro, Qro.",Transporte aéreo,VIAJE,nacional,16,2891.5
+"San Andrés Tuxtla, Ver.",Refrescos envasados,LT,otro,20,9.76
+"San Andrés Tuxtla, Ver.",Transporte aéreo,VIAJE,nacional,8,2640.0
+"San Luis Potosí, S.L.P.",Refrescos envasados,LT,lata,8,20.985
+"San Luis Potosí, S.L.P.",Refrescos envasados,LT,otro,32,7.75
+"San Luis Potosí, S.L.P.",Transporte aéreo,VIAJE,nacional,16,2094.5
+"Tampico, Tamps.",Refrescos envasados,LT,otro,40,11.14
+"Tampico, Tamps.",Transporte aéreo,VIAJE,nacional,16,1017.41
+"Tapachula, Chis.",Refrescos envasados,LT,lata,10,21.97
+"Tapachula, Chis.",Refrescos envasados,LT,otro,30,10.0
+"Tapachula, Chis.",Transporte aéreo,VIAJE,nacional,16,1979.5
+"Tehuantepec, Oax.",Refrescos envasados,LT,otro,20,12.5
+"Tehuantepec, Oax.",Transporte aéreo,VIAJE,nacional,8,1225.375
+"Tepatitlán, Jal.",Refrescos envasados,LT,lata,4,22.54
+"Tepatitlán, Jal.",Refrescos envasados,LT,otro,16,11.34
+"Tepatitlán, Jal.",Transporte aéreo,VIAJE,nacional,8,1271.355
+"Tepic, Nay.",Refrescos envasados,LT,otro,40,10.75
+"Tepic, Nay.",Transporte aéreo,VIAJE,internacional,4,5566.0
+"Tepic, Nay.",Transporte aéreo,VIAJE,nacional,12,2383.0
+"Tijuana, B.C.",Refrescos envasados,LT,otro,40,16.415
+"Tijuana, B.C.",Transporte aéreo,VIAJE,nacional,16,2431.375
+"Tlaxcala, Tlax.",Refrescos envasados,LT,lata,4,16.195
+"Tlaxcala, Tlax.",Refrescos envasados,LT,otro,16,9.67
+"Tlaxcala, Tlax.",Transporte aéreo,VIAJE,nacional,8,2219.75
+"Toluca, Edo. de Méx.",Refrescos envasados,LT,lata,8,22.535
+"Toluca, Edo. de Méx.",Refrescos envasados,LT,otro,32,7.9
+"Toluca, Edo. de Méx.",Transporte aéreo,VIAJE,nacional,16,1436.355
+"Torreón, Coah.",Refrescos envasados,LT,otro,40,13.33
+"Torreón, Coah.",Transporte aéreo,VIAJE,internacional,4,7553.26
+"Torreón, Coah.",Transporte aéreo,VIAJE,nacional,12,2674.25
+"Tulancingo, Hgo.",Refrescos envasados,LT,otro,20,13.955
+"Tulancingo, Hgo.",Transporte aéreo,VIAJE,nacional,8,2097.0
+"Veracruz, Ver.",Refrescos envasados,LT,otro,40,7.9350000000000005
+"Veracruz, Ver.",Transporte aéreo,VIAJE,nacional,16,4987.68
+"Villahermosa, Tab.",Refrescos envasados,LT,otro,40,10.934999999999999
+"Villahermosa, Tab.",Transporte aéreo,VIAJE,nacional,16,1794.0
+Área Met. de la Cd. de México,Refrescos envasados,LT,lata,20,22.54
+Área Met. de la Cd. de México,Refrescos envasados,LT,otro,180,15.0
+Área Met. de la Cd. de México,Transporte aéreo,VIAJE,internacional,12,7316.82
+Área Met. de la Cd. de México,Transporte aéreo,VIAJE,nacional,68,1866.5700000000002
