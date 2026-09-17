@@ -193,14 +193,52 @@ def precios_referencia(data_dir, con_originales=False):
     df = df.dropna(subset=['Precio promedio'])
     df['ciudad'] = df['Nombre ciudad'].map(_norm)
     df['generico'] = df['Genérico'].map(_norm)
-    # Un precio por ciudad y genérico: mediana sobre especificaciones y meses
-    precios = df.groupby(['ciudad', 'generico'])['Precio promedio'].median()
+
+    # N17 — un mismo genérico se cotiza en UNIDADES distintas y la mediana las
+    # mezclaba: huevo traía DOCENA, KG, PAQ y CAJA, y salía 48 % por debajo del
+    # precio por kilo (que es la unidad del deflactor en la base 2018). Afectaba
+    # a 27 de 61 genéricos, 12 con sesgo mayor al 5 %.
+    #
+    # Se toma la unidad modal del propio archivo (usar la del catálogo da
+    # disparates —nopales ×0.066, piña ×1.53— porque deja el 10-20 % de las
+    # filas). Excepción: en huevo la modal es PAQ, que mezcla paquetes de 18 y
+    # de 30 piezas, así que se fuerza KG.
+    #
+    # Filtrar a secas costaría cobertura justo donde más duele (huevo quedaba en
+    # 31 de 46 ciudades, y las demás caerían a la mediana nacional, que es lo
+    # que destruye la variación transversal). En las ciudades sin cotización en
+    # la unidad objetivo se usa su precio mezclado reescalado por la razón
+    # nacional filtrado/mezcla: corrige el nivel sin inventar variación.
+    #
+    # Efecto a nivel de CATEGORÍA: el índice Divisia diluye el sesgo — 11 de 13
+    # categorías cambian menos de 2.5 %; la excepción es Transporte foráneo.
+    df['unidad'] = df['Unidad'].astype(str).str.strip()
+    modal = df.groupby('generico')['unidad'].transform(lambda s: s.mode().iloc[0])
+    df['objetivo'] = df['generico'].map(UNIDAD_FORZADA).fillna(modal)
+
+    mezcla = df.groupby(['ciudad', 'generico'])['Precio promedio'].median()
+    filtrado = (df[df['unidad'] == df['objetivo']]
+                .groupby(['ciudad', 'generico'])['Precio promedio'].median())
+    precios = mezcla.copy()
+    for gen in mezcla.index.get_level_values('generico').unique():
+        m = mezcla.xs(gen, level='generico')
+        f = filtrado.xs(gen, level='generico') if gen in filtrado.index.get_level_values('generico') else None
+        if f is None or f.empty:
+            continue                      # sin cotización en la unidad objetivo
+        comunes = m.index.intersection(f.index)
+        razon = float((f[comunes] / m[comunes]).median()) if len(comunes) else 1.0
+        for ciudad in m.index:
+            precios[(ciudad, gen)] = (f[ciudad] if ciudad in f.index
+                                      else m[ciudad] * razon)
     if con_originales:
         orig = dict(zip(df['ciudad'], df['Nombre ciudad']))
         return precios, orig
     return precios
 
 
+
+# N17: genéricos donde la unidad modal NO es homogénea y hay que forzar otra.
+UNIDAD_FORZADA = {'huevo': 'KG'}      # la modal es PAQ (paquetes de 18 y de 30)
 
 MESES = {'ene': 1, 'feb': 2, 'mar': 3, 'abr': 4, 'may': 5, 'jun': 6,
          'jul': 7, 'ago': 8, 'sep': 9, 'oct': 10, 'nov': 11, 'dic': 12}
