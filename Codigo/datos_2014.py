@@ -9,6 +9,8 @@ Correcciones incorporadas: N4 (columnas del archivo de precios de referencia).
 
 from collections import defaultdict
 
+import os
+
 import numpy as np
 
 from datos_base import DatosAnio
@@ -67,6 +69,88 @@ REF_COL_GAUSS = {
     'gastrointestinales': 63, 'antigripales': 64, 'medicinas_tos': 67,
     'medicinas_piel': 68, 'autobus_foraneo': 69, 'transporte_aereo': 70,
 }
+
+# ---------------------------------------------------------------------------
+# P1 — Pan de caja (pan industrial) como categoría propia, en 2014.
+#
+# Clave ENIGH 1015 = A015 "Pan para sándwich, hamburguesa, hot-dog y tostado"
+# (catálogo ENIGH 2014, idéntico al de 2022: comparable entre años). El Gauss
+# solo usa 1012 (pan blanco) y 1013 (pan dulce), así que el pan industrial
+# quedaba FUERA del estudio; ver P1/D-F. La compran 2,818 hogares del
+# concentrado (14.7 %), contra 12.5 % en 2022.
+#
+# Precios: `precios_pan_de_caja_inegi_2014.CSV`, bajado de la app de precios
+# promedio del INPC (genérico "Pan de caja", ago-nov 2014, las 46 ciudades) y
+# resumido igual que en 2022 (mediana sobre meses y especificaciones). Ya está
+# en pesos de la ventana de levantamiento, así que NO pasa por el deflactor
+# INPC —de hecho `inpc_46_ciudades.asc` no trae serie de pan de caja—.
+#
+# El CD incluye `precios_pan_de_caja_2014_46_ciudades.asc`, que el Gauss nunca
+# referencia. NO se usa: no se pudo validar. Correlaciona 0.107 con los precios
+# de INEGI de la misma ventana y tiene la mitad de dispersión entre ciudades
+# (std ln 0.064 vs 0.107); tampoco se explica como el archivo de 2006
+# deflactado (la razón entre ambos va de 1.44 a 2.09).
+#
+# Nombre de ciudad INEGI -> clave (ent+mun) tal como aparece en el .asc de
+# precios de referencia, que fija el orden de las 46 filas. Ojo con dos:
+# CDMX es 09003, y Tlaxcala es 29026 (Santa Cruz Tlaxcala, el municipio vecino
+# cuyas coordenadas usó COFECE), no 29033 (Tlaxcala capital).
+# ---------------------------------------------------------------------------
+# P1: se agrega con cargar(pan_de_caja=True). NO está activa por defecto porque
+# con el trim del Gauss rompe la estimación: el sistema pasa de 902 a 1,044
+# parámetros y el trim deja 8,940 hogares (8.6 obs/parámetro contra 13.7), la
+# varianza de `util` se dispara de 1.17 a 2.10 y las elasticidades se degradan
+# en TODAS las categorías (Tortillas 0.842 -> 0.137; significativos 9/12 -> 4/13).
+# Sin trim el sistema queda sano y Pan de caja da β_η = 0.351 (t = 2.56).
+CATEGORIA_PAN_CAJA = ("Pan de caja", [([1015], 'pan_de_caja')])
+
+CIUDAD_A_CLAVE = {
+    'Acapulco, Gro.': '12001', 'Aguascalientes, Ags.': '01001',
+    'Campeche, Camp.': '04002', 'Cd. Acuña, Coah.': '05002',
+    'Cd. Juárez, Chih.': '08037', 'Chetumal, Q. Roo.': '23004',
+    'Chihuahua, Chih.': '08019', 'Colima, Col.': '06002',
+    'Cortazar, Gto.': '11011', 'Cuernavaca, Mor.': '17007',
+    'Culiacán, Sin.': '25006', 'Córdoba, Ver.': '30044',
+    'Durango, Dgo.': '10005', 'Fresnillo, Zac.': '32010',
+    'Guadalajara, Jal.': '14039', 'Hermosillo, Son.': '26030',
+    'Huatabampo, Son.': '26033', 'Iguala, Gro.': '12035',
+    'Jacona, Mich.': '16043', 'Jiménez, Chih.': '08036',
+    'La Paz, B.C.S.': '03003', 'León, Gto.': '11020',
+    'Matamoros, Tamps.': '28022', 'Mexicali, B.C.': '02002',
+    'Monclova, Coah.': '05018', 'Monterrey, N.L.': '19039',
+    'Morelia, Mich.': '16053', 'Mérida, Yuc.': '31050',
+    'Oaxaca, Oax.': '20067', 'Puebla, Pue.': '21114',
+    'Querétaro, Qro.': '22014', 'San Andrés Tuxtla, Ver.': '30141',
+    'San Luis Potosí, S.L.P.': '24028', 'Tampico, Tamps.': '28038',
+    'Tapachula, Chis.': '07089', 'Tehuantepec, Oax.': '20515',
+    'Tepatitlán, Jal.': '14093', 'Tepic, Nay.': '18017',
+    'Tijuana, B.C.': '02004', 'Tlaxcala, Tlax.': '29026',
+    'Toluca, Edo. de Méx.': '15106', 'Torreón, Coah.': '05035',
+    'Tulancingo, Hgo.': '13077', 'Veracruz, Ver.': '30193',
+    'Villahermosa, Tab.': '27004', 'Área Met. de la Cd. de México': '09003',
+}
+
+
+def _precios_pan_de_caja(data_dir, claves_fila):
+    """Precio de pan de caja por ciudad (ago-nov 2014), alineado al .asc."""
+    import pandas as pd
+    df = pd.read_csv(data_dir + 'precios_pan_de_caja_inegi_2014.CSV',
+                     skiprows=5, encoding='latin-1')
+    df.columns = [c.strip() for c in df.columns]
+    df['Precio promedio'] = pd.to_numeric(df['Precio promedio'], errors='coerce')
+    precio = (df.dropna(subset=['Precio promedio'])
+                .groupby('Nombre ciudad')['Precio promedio'].median())
+    pos = {c: i for i, c in enumerate(claves_fila)}
+    P = np.full(len(claves_fila), np.nan)
+    for nombre, valor in precio.items():
+        i = pos.get(CIUDAD_A_CLAVE.get(nombre))
+        if i is not None:
+            P[i] = valor
+    if not np.isfinite(P).all():
+        faltan = [claves_fila[i] for i in np.flatnonzero(~np.isfinite(P))]
+        raise ValueError(f'pan de caja sin precio en las claves {faltan}')
+    return P
+
 
 # Qué serie del INPC deflacta cada producto (Gauss l.560-660)
 PRECIO_A_INPC = {
@@ -202,6 +286,12 @@ def _precios_por_ciudad(data_dir):
         for i in range(N_CIUDADES)])
     P46['materiales'] = np.where(np.isnan(P46['materiales']),
                                  ref_data['materiales'], P46['materiales'])
+
+    # Pan de caja (P1): ya viene en pesos de ago-nov 2014, no se deflacta.
+    # Opcional: solo si está el CSV de precios de INEGI.
+    if os.path.exists(data_dir + 'precios_pan_de_caja_inegi_2014.CSV'):
+        claves_fila = [f'{int(e):02d}{int(m):03d}' for e, m in zip(ref_est, ref_mun)]
+        P46['pan_de_caja'] = _precios_pan_de_caja(data_dir, claves_fila)
     return P46, ref_lat, ref_lon
 
 
@@ -220,10 +310,15 @@ def _vars_costos(data_dir):
     ])
 
 
-def cargar(data_dir, verbose=True):
+def cargar(data_dir, verbose=True, pan_de_caja=False):
     """Carga la ENIGH 2014 y devuelve un `DatosAnio`."""
     if not data_dir.endswith('/'):
         data_dir += '/'
+
+    categorias = list(CATEGORIAS)
+    if pan_de_caja:      # P1, ver CATEGORIA_PAN_CAJA
+        i = next(k for k, (n, _) in enumerate(categorias) if n == 'Pan') + 1
+        categorias.insert(i, CATEGORIA_PAN_CAJA)
 
     P46, c46_lat, c46_lon = _precios_por_ciudad(data_dir)
 
@@ -283,7 +378,7 @@ def cargar(data_dir, verbose=True):
         print(f'Hogares después de filtro de distancia (<=400 km): {len(conc)}')
 
     # --- gasto por producto -------------------------------------------------
-    claves_todas = sorted({c for _, comps in CATEGORIAS
+    claves_todas = sorted({c for _, comps in categorias
                            for cl, _ in comps if cl for c in cl})
     idx = {c: j for j, c in enumerate(claves_todas)}
     acum = np.zeros((len(conc), len(claves_todas)))
@@ -296,7 +391,7 @@ def cargar(data_dir, verbose=True):
                 acum[i, j] += src[k, 2]
 
     gastos_producto = {}
-    for _, comps in CATEGORIAS:
+    for _, comps in categorias:
         for claves, prod in comps:
             if claves is None:                       # materiales: del concentrado
                 bruto = conc[:, COL_MATERIALES]
@@ -309,11 +404,11 @@ def cargar(data_dir, verbose=True):
     # --- categorías, índices Divisia y participaciones ----------------------
     from aradillas_core import divisia_price_index
 
-    composicion = {nom: [p for _, p in comps] for nom, comps in CATEGORIAS}
-    n_cat = len(CATEGORIAS)
+    composicion = {nom: [p for _, p in comps] for nom, comps in categorias}
+    n_cat = len(categorias)
     gastos_cat = np.zeros((len(conc), n_cat))
     precios_cat = np.zeros((len(conc), n_cat))
-    for j, (nom, comps) in enumerate(CATEGORIAS):
+    for j, (nom, comps) in enumerate(categorias):
         prods = [p for _, p in comps]
         gastos_cat[:, j] = np.sum([gastos_producto[p] for p in prods], axis=0)
         precios_cat[:, j] = divisia_price_index(
@@ -351,7 +446,7 @@ def cargar(data_dir, verbose=True):
 
     datos = DatosAnio(
         anio=2014, n_cat=n_cat,
-        nombres_cat=[n for n, _ in CATEGORIAS],
+        nombres_cat=[n for n, _ in categorias],
         precios_ln=np.log(precios_cat), w=w, gasto_total=gasto_total,
         gastos_cat=gastos_cat, Z=Z,
         factor_expansion=conc[:, COL_FACTOR], ciudad=ciudad,
