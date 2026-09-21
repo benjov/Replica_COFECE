@@ -3,8 +3,8 @@
 Generado por `Codigo/congelar_resultados.py`. **No editar a mano**: toda cifra que se
 cite en P2 o en el reporte debe salir de aquí (o de `resultados_congelados.json`).
 
-* generado: 2026-09-20T23:11:59
-* código: commit `e1bcb71` (rama `refactor-modulos`, con cambios sin commit en Codigo/)
+* generado: 2026-09-21T00:07:15
+* código: commit `c956eeb` (rama `refactor-modulos`)
 * entorno: Python 3.9.6, numpy 1.26.4
 
 `*` = significativo (β > 0 y t ≥ 2.326, V1). `n×k` = ciudades × controles que entraron a la regresión de markups.
@@ -13,13 +13,13 @@ cite en P2 o en el reporte debe salir de aquí (o de `resultados_congelados.json
 
 | nombre | año | trim | categorías | VE / | Gini sobre | N final | s |
 |---|---|---|---|---|---|---|---|
-| `replica_2014` | 2014 | sí | 12 | ing_total | ing_mon | 8,940 | 31 |
-| `replica_2014_13cat` | 2014 | sí | 13 | ing_total | ing_mon | 8,940 | 28 |
-| `comparable_2014` | 2014 | no | 12 | ing_cor | ing_cor | 12,372 | 36 |
-| `comparable_2014_13cat` | 2014 | no | 13 | ing_cor | ing_cor | 12,372 | 36 |
-| `comparable_2022` | 2022 | no | 13 | ing_cor | ing_cor | 57,552 | 376 |
-| `comparable_2022_12cat` | 2022 | no | 12 | ing_cor | ing_cor | 57,552 | 205 |
-| `trim_2022` | 2022 | sí | 13 | ing_cor | ing_cor | 41,646 | 249 |
+| `replica_2014` | 2014 | sí | 12 | ing_total | ing_mon | 8,940 | 33 |
+| `replica_2014_13cat` | 2014 | sí | 13 | ing_total | ing_mon | 8,940 | 29 |
+| `comparable_2014` | 2014 | no | 12 | ing_cor | ing_cor | 12,372 | 37 |
+| `comparable_2014_13cat` | 2014 | no | 13 | ing_cor | ing_cor | 12,372 | 41 |
+| `comparable_2022` | 2022 | no | 13 | ing_cor | ing_cor | 57,552 | 254 |
+| `comparable_2022_12cat` | 2022 | no | 12 | ing_cor | ing_cor | 57,552 | 198 |
+| `trim_2022` | 2022 | sí | 13 | ing_cor | ing_cor | 41,646 | 252 |
 
 ## Diagnóstico del estimador
 
@@ -213,7 +213,7 @@ VE en pesos: mediana 3,736, media 4,495 (paper: 1,497). Significativos: 9/12.
 | **significativos** | 8/13 | 7/13 | 7/13 | 7/13 |
 | **VE/ing_cor** | 0.0 % | 0.0 % | 0.0 % | 0.0 % |
 | hogares con VE = 0 | 87.1 % | 84.6 % | 84.6 % | 89.7 % |
-| VE/ing_cor sin Transporte foráneo | (no entra) | (no entra) | (no entra) | (no entra) |
+| VE/ing_cor sin Transporte foráneo | 0.0 % | (no entra) | (no entra) | 0.0 % |
 | **reducción Gini (ing_cor)** | 0.0 % | 0.0 % | 0.0 % | 0.0 % |
 
 ## D-H — controles de costo (`comparable_2022`)

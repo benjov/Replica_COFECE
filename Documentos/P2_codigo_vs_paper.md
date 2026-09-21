@@ -420,10 +420,14 @@ con lo medido es que, con cambios de precio de esa magnitud, dominan los términ
 cuadráticos en precios del sistema EASI; **no la hemos verificado**.
 
 Consecuencia: **incluir un sector con poder de mercado puede bajar la pérdida total**, que es
-lo contrario de lo que el concepto exige. Pasa en 2014 sin recorte (20 % de hogares en cero),
-en 2022 con controles del sector (23 %), en 2022 con recorte (89 %, §6.1) y en 2014 con 13
-categorías sin recorte (87 %, §6.2). En la réplica fiel al programa no pasa (0 %), porque
-Transporte foráneo no resulta significativo.
+lo contrario de lo que el concepto exige. Pasa en 2014 sin recorte (20 % de hogares en cero;
+5 % sin Transporte) y en 2022 con controles del sector (23 %; 1 % sin Transporte). En la
+réplica fiel al programa no pasa (0 %), porque Transporte foráneo no resulta significativo.
+
+Hay otros dos casos con muchos hogares en cero que **no** se explican así: 2022 con recorte
+(89 %, §6.1) y 2014 con 13 categorías sin recorte (87 %, §6.2). Quitando Transporte, siguen en
+62 % y 73 %, y la pérdida mediana sigue siendo cero. Ahí el problema es el sistema de demanda
+mal identificado, no un sector en particular.
 
 El documento incluye los dos transportes entre los sectores de su cálculo de bienestar
 (§4 del documento). No podemos saber si el problema afectó a sus cifras, porque su programa
@@ -449,8 +453,8 @@ el estudio.
 | **hogares con VE = 0** | 0 % | **89 %** | 1 % |
 
 Con recorte, 2022 no produce una cifra de bienestar: el 89 % de los hogares queda con
-pérdida cero. Entra además Transporte foráneo, el sector cuya variación de precios no es
-real (§7).
+pérdida cero, y quitar Transporte foráneo no lo arregla (62 %): no es el problema de §5.1,
+es la identificación.
 Incluso sin recorte, el 37 % de los hogares de 2022 tiene efectos ingreso planos, contra el
 7 % de 2014. La identificación con la ENIGH moderna es más débil aunque la muestra sea
 seis veces mayor.
