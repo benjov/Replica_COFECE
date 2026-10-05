@@ -31,3 +31,11 @@ Data_2022
 
 .env
 .venv
+
+# Notas de desarrollo internas (asistentes de IA, agentes): nunca deben
+# viajar en este repo. Viven fuera de Replica_COFECE/, pero se ignoran aquí
+# también por si alguna vez se copian o se crean por accidente dentro.
+CLAUDE.md
+.claude/
+AGENTS.md
+_exploracion_sesion/

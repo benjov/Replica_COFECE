@@ -4,7 +4,7 @@ Uso (desde cualquier directorio):
     python3 Replica_COFECE/Codigo/run_nb.py aradillas_2022.ipynb
     python3 Replica_COFECE/Codigo/run_nb.py comparacion_2014_2022.ipynb
 
-Resuelve las dos trampas del entorno local (CLAUDE.md §9):
+Resuelve las dos trampas del entorno local:
 * los notebooks usan rutas relativas 'Replica_COFECE/...', así que el kernel
   corre con cwd = directorio padre de Replica_COFECE;
 * el kernelspec `python3` del sistema puede invocar un `python` inexistente, así

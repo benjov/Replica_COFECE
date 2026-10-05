@@ -1,6 +1,6 @@
 """Congela TODAS las cifras citables del proyecto en un solo archivo.
 
-Motivo: el reporte de hallazgos y CLAUDE.md citaban números de corridas distintas
+Motivo: distintos documentos de trabajo citaban números de corridas distintas
 (Pan de caja 0.940 y 0.971; Transporte foráneo con controles sectoriales 0.254 y
 0.466; VE 2014 de 13.0 %, 14.3 % y 18.0 % según el denominador). Cada una era
 correcta para SU configuración, pero nada decía cuál. Aquí cada cifra queda
@@ -73,7 +73,7 @@ CONFIGS = {
                       costos=False, subtransporte=False),
 }
 
-# Modos de controles de costo para D-H (ver CLAUDE.md §2 y costos_saic.py).
+# Modos de controles de costo para D-H (ver costos_saic.py).
 # 'rama' se guarda como diagnóstico: su cobertura cae a 4 controles en varias
 # categorías y NO es citable.
 MODOS_COSTOS = ('ciudad', 'sector', 'sector7', 'rama')

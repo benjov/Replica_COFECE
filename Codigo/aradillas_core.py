@@ -11,7 +11,7 @@ Fuente de verdad metodológica: CD/programa_ENIGH_2014.g (código Gauss original
 Ante cualquier duda de implementación manda el Gauss, no el texto del paper.
 
 Todas las correcciones verificadas contra el Gauss llevan su número de bug
-(N4, N6, N8, N10, N11, N12) en el comentario. Ver CLAUDE.md para el detalle.
+(N4, N6, N8, N10, N11, N12) en el comentario, en el punto donde se aplican.
 """
 
 import math
@@ -21,7 +21,7 @@ import numpy as np
 from scipy.optimize import minimize_scalar
 
 # ---------------------------------------------------------------------------
-# Constantes del Gauss. No cambiarlas sin anotar la razón en CLAUDE.md.
+# Constantes del Gauss. No cambiarlas sin anotar la razón (cada una cita su línea del Gauss abajo).
 # ---------------------------------------------------------------------------
 NUM_STEPS = 16       # iteraciones del bucle OLS (Gauss l.2449: num_steps=16)
 CRITTT = 0.01        # trim 1% por cola, DENTRO del bucle (Gauss l.5535-5536)
@@ -151,7 +151,7 @@ def estimar_easi(pm_ln, w_mat, sg, Z, n_cat, aplicar_trim=True,
     `aplicar_trim=False` desactiva el recorte por iteración. El Gauss SÍ recorta
     (y de forma acumulativa), pero eso impide converger: el criterio compara
     parámetros estimados sobre muestras distintas y además colapsa la varianza
-    de la utilidad (4.03 -> 0.32 en 16 pasos). Ver CLAUDE.md §8ter.
+    de la utilidad (4.03 -> 0.32 en 16 pasos).
 
     Devuelve
     -------
@@ -283,7 +283,8 @@ class ModeloEASI:
     aproximada u0). Se replica con Newton amortiguado, que se queda cerca de u0
     igual que optmum; con los precios ya corregidos (N8) converge en ~97% de los
     hogares. Resolver el cúbico en forma cerrada da raíces exactas pero alejadas
-    de u0 y económicamente implausibles — ver CLAUDE.md §8bis.
+    de u0 y económicamente implausibles (el solver exacto reproduce C=ln x casi
+    exacto, pero con raíces muy alejadas del rango plausible de u0).
     """
 
     def __init__(self, b_poly, C_mat, D_mat, B_mat, AZ_mats):
@@ -521,7 +522,7 @@ def estimar_markups(precios_ciudad, elastic_ciudad, vars_costos,
 
     Nota: cuando las elasticidades están comprimidas hacia -1, η_m ≈ p_m y la
     regresión devuelve β ≈ 1 con t enormes por colinealidad casi perfecta. Eso
-    es una identidad algebraica, no poder de mercado. Ver CLAUDE.md §6.0.
+    es una identidad algebraica, no poder de mercado.
     """
     n_ciudades, n_cat = precios_ciudad.shape
     beta_eta = np.zeros(n_cat)
