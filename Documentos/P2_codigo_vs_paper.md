@@ -12,6 +12,43 @@
 > `Codigo/auditoria_precios.ipynb`), el diagnóstico de §5.1 (`Codigo/diagnostico_ve_cero.py`)
 > y unas pocas cifras marcadas como *medición histórica*, con su fecha.
 
+> **Nota de actualización (5 de octubre de 2026).** Este borrador quedó superado por
+> `reporte/informe_tecnico.docx` (repositorio `Reporte_Aradillas`), que es ahora la versión de
+> referencia del proyecto. Las discrepancias detectadas entre este borrador y el congelado al
+> construir ese informe son:
+>
+> - Rango de ciudades por regresión (§6 de este documento): aquí dice "44 a 46, salvo
+>   Transporte foráneo (37 a 43)"; el congelado da 30 a 46 en `replica_2014` y 24 en
+>   `comparable_2014` (Transporte foráneo, el que entra al bienestar). Ver Tabla C.3 del informe.
+> - "13.7 observaciones por parámetro sin recorte" (§6.2 de este documento) es 12,372/902
+>   (sistema de 12 categorías); con 1,044 parámetros son 11.9.
+> - "Con la muestra de 2014 el recorte es inocuo" (§6 de este documento) contradice la pérdida
+>   medida en §5 (de 3.1 % sin recorte a 13.0 % con él). El informe lo reformula.
+> - Redondeos: β de pan de caja 0.351 (no 0.352), lácteos 0.435 (no 0.436), efectos ingreso
+>   planos 6.3 % (no 6.4 %), pan de caja con recorte 0.073 (no 0.074).
+> - "Factor de 2.6" de D-H en 2022: con los valores sin redondear es 2.7.
+> - El promedio 35.5 % de sobreprecio (línea 636 de este documento) no es comparable con el
+>   98.23 % del documento original: el promedio simple de los mismos 13 valores del Cuadro 9
+>   es 59.9 %.
+> - Fecha del congelado citada aquí (línea 5, "20 de septiembre"): es 21 de septiembre 00:07.
+>   El tiempo de corrida completa (línea 695, "≈40 min") es ≈14-15 min.
+>
+> Además, D-I (líneas 40, 155, 227-234 de este documento) describe el markup de bienestar del
+> programa como −1/ε "sin β_η", leyendo las líneas 6345-6385 del Gauss. Una lectura más
+> completa encuentra que esas líneas se sobrescriben sin condición en la 6389
+> (`precios_0=precios_0_bis`) por una rama que sí incorpora β_η y que además topa el markup
+> entre 1 y 5 — el mismo objeto que el código de la réplica ya calcula como `markup` (para el
+> Cuadro 9), no `markup_lerner` (el que la réplica usa para el bienestar). Benjamín confirmó
+> esta lectura del código el 5 de octubre de 2026, y la prueba numérica ya corrió en las cinco
+> configuraciones donde la pérdida cero no es 0 %: el efecto de usar uno u otro markup es
+> grande solo en `comparable_2014` (pérdida cero de hogares: 20.1 % → 2.1 %); en las otras
+> cuatro (incluidas las tres de 2022) es de un punto porcentual o menos, y en dos de ellas va en
+> sentido contrario. La lista de sectores significativos no cambia en ningún caso. **Ya se
+> aplicó al informe oficial (5 de octubre de 2026, Opción A):** se reescribió D-I y se amplió el
+> Punto abierto 1 (§12.1) sin cambiar ninguna cifra (la réplica sigue usando `markup_lerner`
+> para el bienestar); no se recongeló nada. Este documento (P2) sigue sin corregirse en este
+> punto. Detalle completo ya incorporado en D-I y en el Punto abierto 1 (§12.1) del informe oficial.
+
 ---
 
 ## Resumen
